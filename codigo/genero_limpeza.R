@@ -14,8 +14,8 @@ library(genderBR) # Dicionário de gênero com base no primeiro nome
 
 # Unificação dos bancos de 1991-2021####
 # Bancos de 1991-2012
-banco8712 <- purrr::map_dfr(list.files(path = "dados/catalogo/capes8712", 
-                                       pattern = "dados", 
+banco9112 <- purrr::map_dfr(list.files(path = "dados/bancos/capes9112", 
+                                       pattern = "dados", # abre todos arquivo com a referida string
                                        full.names = TRUE),
                             readr::read_csv2, 
                             locale = readr::locale(encoding = "ISO-8859-1", 
@@ -23,18 +23,19 @@ banco8712 <- purrr::map_dfr(list.files(path = "dados/catalogo/capes8712",
                                                    grouping_mark = "."),
                             show_col_types = FALSE)
 # Bancos de 2013-2021
-banco1321 <- purrr::map_dfr(list.files(path = "dados/catalogo/capes1321", 
+banco1321 <- purrr::map_dfr(list.files(path = "dados/bancos/capes1321", 
                                        pattern = "capes", 
                                        full.names = TRUE),
                             readr::read_csv2, 
                             locale = readr::locale(encoding = "ISO-8859-1", 
                                                    decimal_mark = ",", 
                                                    grouping_mark = "."),
-                            na = c("NI", "NA"),
+                            na = c("NI", "NA"), 
                             show_col_types = FALSE) 
 
-# Variáveis dos Bancos de 1987-2012 - Ver Metadados do Catálogo
-vars8712 <- c("AnoBase",
+# Variáveis de interesse dos Bancos de 1991-2012 
+# Ver Metadados do Catálogo
+vars9112 <- c("AnoBase",
               "NomeIes",
               "GrandeAreaDescricao",
               "AreaAvaliacao",
@@ -58,12 +59,11 @@ vars1321 <- c("AN_BASE",
 
 # Junção dos bancos com as 13 variáveis escolhidas + 1991####
 catalogo9121 <- dplyr::bind_rows(
-  banco8712 |> dplyr::select(all_of(vars8712)) |> 
-    dplyr::rename_with(.cols = all_of(vars8712), 
+  banco9112 |> dplyr::select(all_of(vars9112)) |> 
+    dplyr::rename_with(.cols = all_of(vars9112), 
                        ~vars1321[vars1321 != "NM_GRAU_ACADEMICO"]), # Essa variável não se encontra nos bancos anteriores a 2013
   banco1321) |> 
-  dplyr::select(all_of(vars1321)) |> 
-  dplyr::filter(AN_BASE >= 1991)  # Inclusão apenas de trabalhos a partir de 1991
+  dplyr::select(all_of(vars1321)) 
 
 # Limpeza do texto e padronização de variáveis####
 catalogo9121 <- catalogo9121  |> 
@@ -100,14 +100,14 @@ catalogo9121 <- catalogo9121  |>
       g_orientador == "Female" & g_discente == "Male" ~ "FM",
       g_orientador == "Female" & g_discente == "Female" ~ "FF")
     ))
-# N = 1374371
+# N = 1374373
 # Exclui NA's de variáveis da análise
 catalogo9121 <- catalogo9121 |> 
-  filter(nm_grau_academico != "Doutorado Profissional") |>  # Exclusão de 39 observações
-  filter(nm_grande_area_conhecimento != "") |>  # Exclui 1 observação com fator em branco
-  drop_na(g_oridis) # Automaticamente exclui NAs de g_orientador e g_discente (1117943 | -256388) --> 81.34%
+  filter(nm_grau_academico != "Doutorado Profissional") |>  # Exclusão de 39 observações (n = 1374334)
+  filter(nm_grande_area_conhecimento != "") |>  # Exclui 2 observação com fator em branco (1374332)
+  drop_na(g_oridis) # Exclui NAs de g_orientador e g_discente (1117944) --> 81.34%
 
 # Banco limpo####
-# Salvar arquivo RAW -- CSV 
+# Salvar arquivo RAW 
 catalogo9121 |>
-  readr::write_csv("dados/catalogo/catalogo9121_raw.csv")
+  readr::write_csv("dados/bancos/catalogo9121_raw.csv")
