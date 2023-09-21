@@ -1,18 +1,17 @@
 ####Pacotes####
 library(tidyverse)
 library(here)
-library(MetBrewer)
+library(gt) # Tabelas
+library(see) # Cores retrôs no gráfico
+library(ggtext) # Texto em gráficos
 library(ggforce)
 library(ggridges)
 library(extrafont)
 library(ggtext)
 library(ggstream)
 library(stringi)
-library(gt)
-library(janitor)
 library(ggsci) # Paleta cores
 library(ggrepel)
-library(ggtext)
 library(geobr)
 library(sf)
 
@@ -32,8 +31,8 @@ fatores <- c("nm_grande_area_conhecimento",
 dados <- dados  |> 
   mutate(across(all_of(fatores), as.factor))
 
-# Tabela 1 | Desigualdade nas grande áreas ####
-# Cálculo por Grande Área####
+# Tabela 1 | Grandes Áreas ####
+# Cálculo por Grande Área#### **NOTA: CRIAR FUNÇÃO***
 dados_areas <- dados |> 
   group_by(nm_grande_area_conhecimento) |> 
   summarize(total = n()) |> 
@@ -61,7 +60,7 @@ dados_areas_gd <- dados_areas_gd |>
     names_from = g_discente,
     values_from = c(total_d, frequencia_d))
 
-# Cálculo por oridis
+# Cálculo por orientador-orientando
 dados_areas_god <- dados |> 
   group_by(nm_grande_area_conhecimento, g_oridis) |> 
   summarize(total_od = n()) |> 
@@ -72,7 +71,7 @@ dados_areas_god <- dados_areas_god |>
     names_from = g_oridis,
     values_from = c(total_od, frequencia_od))
 
-# Tabela 1 | Agrupamento Grande Área####
+# Agrupamento####
 lista_grande_area <- list(dados_areas, 
                           dados_areas_go, 
                           dados_areas_gd, 
@@ -81,10 +80,90 @@ lista_grande_area <- list(dados_areas,
 tab_grande_area <- purrr::reduce(lista_grande_area, 
                                  left_join, 
                                  by = "nm_grande_area_conhecimento") |> 
-  mutate(descritor = "Grande Área") |> 
   rename("areas" = "nm_grande_area_conhecimento")
 
-# Tabela 1 | Cálculo por Humanas ####
+tab_grande_area <- tab_grande_area  |> 
+  bind_rows(
+    tab_grande_area  |> 
+      summarise(across(contains("total"), sum)) |> 
+      mutate(areas = "Total")
+  )
+
+# TABELA 1 | Grandes Áreas ####
+
+tab1 <- tab_grande_area |> 
+  gt(rowname_col = "areas") |>
+  cols_merge(
+    columns = c(total, frequencia), # Total
+    pattern = "{1} ({2})") |> 
+  cols_merge(
+    columns = c(total_d_Male, frequencia_d_Male), # Discentes Homens
+    pattern = "{1} ({2})") |> 
+  cols_merge(
+    columns = c(total_d_Female, frequencia_d_Female), # Discentes Mulheres
+    pattern = "{1} ({2})") |> 
+  cols_merge(
+    columns = c(total_o_Male, frequencia_o_Male), # Orientadores Homens
+    pattern = "{1} ({2})") |> 
+  cols_merge(
+    columns = c(total_o_Female, frequencia_o_Female), # Orientadoras Mulheres
+    pattern = "{1} ({2})") |> 
+  cols_merge(
+    columns = c(total_od_FF, frequencia_od_FF), # Mulher-Mulher
+    pattern = "{1} ({2})") |>
+  cols_merge(
+    columns = c(total_od_FM, frequencia_od_FM), # Mulher-Homem
+    pattern = "{1} ({2})") |>
+  cols_merge(
+    columns = c(total_od_MF, frequencia_od_MF), # Homem-Mulher
+    pattern = "{1} ({2})") |>
+  cols_merge(
+    columns = c(total_od_MM, frequencia_od_MM), # Homem-Homem
+    pattern = "{1} ({2})") |>
+  tab_spanner(
+    label = "Discente n(%)",
+    columns = c(total_d_Male, total_d_Female)) |> 
+  tab_spanner(   # Títulos
+    label = "Orientador(a) n(%)",  
+    columns = c(total_o_Male, total_o_Female)) |>
+  tab_spanner(
+    label = "Orientador(a)/Discente n(%)",
+    columns = c(total_od_FF, total_od_FM, total_od_MF,total_od_MM)) |> 
+  cols_label(
+    total = "Trabalhos",
+    total_o_Male = "H",
+    total_o_Female = "M",
+    total_d_Female = "M",
+    total_d_Male = "H",
+    total_od_FF = "M/M",
+    total_od_FM = "M/H",
+    total_od_MF = "H/M",
+    total_od_MM = "H/H"
+  ) |> 
+  tab_header(
+    title = "Tabela 1. Descrição do gênero de orientadores e discentes das teses e dissertações defendidas no Brasil de acordo com as Grandes Áreas da CAPES (1991-2021)"
+  ) |> 
+  cols_align(
+    align = "center") |> 
+  fmt_number(
+    drop_trailing_zeros = TRUE,
+    decimals = 2,
+    sep_mark = ".") |> 
+  opt_table_font(
+    font = "Times New Roman") |> 
+  sub_missing(
+    columns = everything(),
+    rows = everything(),
+    missing_text = ""
+  )
+#Salvar
+gtsave(tab1, 
+       "tab1_grande-area.docx", 
+       path = "figs",
+       vwidth = 1400,
+       vheight = 1700)
+
+# Tabela 2 | Ciências Humanas ####
 dados_humanas <- dados |> 
   filter(nm_grande_area_conhecimento == "Ciências Humanas") |> 
   mutate(nm_area_avaliacao = droplevels(nm_area_avaliacao))  
@@ -128,7 +207,7 @@ dados_humanas_god <- dados_humanas_god |>
     names_from = g_oridis,
     values_from = c(total_od, frequencia_od))
 
-# Tabela 1 | Agrupamento Humanas ####
+# Agrupamento Humanas ####
 lista_humanas <- list(dados_humanas_total, 
                       dados_humanas_go, 
                       dados_humanas_gd, 
@@ -136,74 +215,171 @@ lista_humanas <- list(dados_humanas_total,
 
 tab_humanas <- purrr::reduce(lista_humanas, 
                              left_join, 
-                             by = "nm_area_avaliacao") |> 
-  mutate(descritor = "Ciências Humanas")|> 
-  rename("areas" = "nm_area_avaliacao")
+                             by = "nm_area_avaliacao")
 
-# Tabela 1 | União tab_grande_area + tab_humanas####
-tab <- bind_rows(tab_grande_area, tab_humanas)
-
-# TABELA 01####                                                             
-tab |> 
-  gt(rowname_col = "areas",
-     groupname_col = "descritor") |>
+# TABELA 02 | Ciências Humanas####                                                             
+tab2 <- tab_humanas |> 
+  gt(rowname_col = "nm_area_avaliacao") |>
   cols_merge(
     columns = c(total, frequencia), # Total
-    pattern = "{1} ({2}%)") |> 
+    pattern = "{1} ({2})") |> 
   cols_merge(
     columns = c(total_d_Male, frequencia_d_Male), # Discentes Homens
-    pattern = "{1} ({2}%)") |> 
+    pattern = "{1} ({2})") |> 
   cols_merge(
     columns = c(total_d_Female, frequencia_d_Female), # Discentes Mulheres
-    pattern = "{1} ({2}%)") |> 
+    pattern = "{1} ({2})") |> 
   cols_merge(
     columns = c(total_o_Male, frequencia_o_Male), # Orientadores Homens
-    pattern = "{1} ({2}%)") |> 
+    pattern = "{1} ({2})") |> 
   cols_merge(
     columns = c(total_o_Female, frequencia_o_Female), # Orientadoras Mulheres
-    pattern = "{1} ({2}%)") |> 
+    pattern = "{1} ({2})") |> 
   cols_merge(
     columns = c(total_od_FF, frequencia_od_FF), # Mulher-Mulher
-    pattern = "{1} ({2}%)") |>
+    pattern = "{1} ({2})") |>
   cols_merge(
     columns = c(total_od_FM, frequencia_od_FM), # Mulher-Homem
-    pattern = "{1} ({2}%)") |>
+    pattern = "{1} ({2})") |>
   cols_merge(
     columns = c(total_od_MF, frequencia_od_MF), # Homem-Mulher
-    pattern = "{1} ({2}%)") |>
+    pattern = "{1} ({2})") |>
   cols_merge(
     columns = c(total_od_MM, frequencia_od_MM), # Homem-Homem
-    pattern = "{1} ({2}%)") |>
+    pattern = "{1} ({2})") |>
   tab_spanner(
-    label = "Discente",
+    label = "Estudante n(%)",
     columns = c(total_d_Male, total_d_Female)) |> 
   tab_spanner(   # Títulos
-    label = "Orientador(a)",  
+    label = "Orientador(a) n(%)",  
     columns = c(total_o_Male, total_o_Female)) |>
   tab_spanner(
-    label = "Orientador(a)/Discente",
+    label = "Orientador(a)/Estudante n(%)",
     columns = c(total_od_FF, total_od_FM, total_od_MF,total_od_MM)) |> 
   cols_label(
     total = "Trabalhos",
-    total_o_Male = "Homem",
-    total_o_Female = "Mulher",
-    total_d_Female = "Mulher",
-    total_d_Male = "Homem",
-    total_od_FF = "Mulher/Mulher",
-    total_od_FM = "Mulher/Homem",
-    total_od_MF = "Homem/Mulher",
-    total_od_MM = "Homem/Homem"
-  ) |> 
-  tab_header(
-    title = "Tabela 1. Descrição do gênero de orientadores e discentes das teses e dissertações defendidas no Brasil entre 1991-2021 de acordo com as Grandes Áreas da CAPES"
-  ) |> 
+    total_o_Male = "H",
+    total_o_Female = "M",
+    total_d_Female = "M",
+    total_d_Male = "H",
+    total_od_FF = "M/M",
+    total_od_FM = "M/H",
+    total_od_MF = "H/M",
+    total_od_MM = "H/H"
+  ) |>  
   cols_align(
     align = "center") |> 
   fmt_number(
     drop_trailing_zeros = TRUE,
     decimals = 2,
-    sep_mark = ".") 
+    sep_mark = ".") |> 
+  opt_table_font(
+    font = "Times New Roman") 
 
+#Salvar
+gtsave(tab2, 
+       "tab2_humanas.docx", 
+       path = "figs",
+       vwidth = 1400,
+       vheight = 1700)
+
+# GRÁFICO 1 | Grandes áreas-Orientadoras-Tempo ####
+graf1_go <- dados |> 
+  group_by(nm_grande_area_conhecimento, an_base, g_orientador) |> 
+  summarize(total = n()) |> 
+  mutate(frequencia = round(total/sum(total)*100,2))
+
+graf1_go |> 
+  filter(g_orientador == "Female") |> 
+  ggplot(aes(x = an_base, 
+             y = frequencia,
+             color = nm_grande_area_conhecimento)) +
+  geom_line(linewidth = 2.5) +
+  scale_x_continuous(limits = c(1991, 2021), breaks = seq(1990, 2020, 5)) +
+  scale_y_continuous(limits = c(0,70), position = "right") +
+  scale_color_metro_d()+
+  theme_classic() +
+  labs(title = "",
+       caption = "", 
+       x = "Ano",
+       y = "%") +
+  theme(legend.title = element_blank(),
+        legend.position = "top",
+        legend.text=element_text(size=25),
+        text = element_text(size = 36, family = "Times New Roman")) +
+  guides(color = guide_legend(ncol = 4))
+
+ggsave(
+  "figs/graf1.tiff",
+  bg = "white",
+  width = 17,
+  height = 12,
+  dpi = 300,
+  plot = last_plot())
+
+# GRÁFICO 2 | Orientadora vs Estudante#### 
+
+# Cálculo por orientador
+graf2_go <- dados |> 
+  group_by(nm_grande_area_conhecimento, nm_area_avaliacao, g_orientador) |> 
+  summarize(total_o = n()) |> 
+  mutate(frequencia_o = round(total_o/sum(total_o)*100,2)) |> 
+  filter(g_orientador == "Female")
+
+# Cálculo por discente
+graf2_gd <- dados |> 
+  group_by(nm_grande_area_conhecimento, nm_area_avaliacao, g_discente) |> 
+  summarize(total_d = n()) |> 
+  mutate(frequencia_d = round(total_d/sum(total_d)*100,2)) |> 
+  filter(g_discente == "Female") 
+
+graf2_gogd <- left_join(graf2_go, 
+                        graf2_gd, 
+                       by = c("nm_grande_area_conhecimento", "nm_area_avaliacao")) 
+
+graf2_gogd |> ggplot(aes(x = frequencia_o, 
+                        y = frequencia_d)) +
+  geom_point(aes(colour = nm_grande_area_conhecimento),
+             shape = 20,
+             size = 4.5) +
+  scale_x_continuous(limits = c(0, 100)) +
+  scale_y_continuous(limits = c(0, 100)) +
+  scale_color_metro_d()+
+  theme_classic() +
+  labs(x = "Mulheres orientadoras (%)",
+       y = "Mulheres estudantes (%)",
+       color = "Grande Área") +
+  ggrepel::geom_text_repel(aes(label = nm_area_avaliacao,
+                               color = nm_grande_area_conhecimento),
+                           show.legend = FALSE,
+                           min.segment.length = .7,
+                           box.padding = 0.3,
+                           size = 5,
+                           nudge_x = 0.1,
+                           nudge_y = 1.6) +
+  theme(legend.title = element_blank(),
+        legend.position = c(.85, .38),
+        text = element_text(size = 30, family = "Times New Roman"),
+        legend.title.align = 0.25) +
+  guides(colour = guide_legend(override.aes = list(size=8))) 
+  
+# Salvar gráfico
+ggsave(
+  "figs/graf2.tiff",
+  bg = "white",
+  width = 17,
+  height = 12,
+  dpi = 300,
+  plot = last_plot())
+
+
+
+
+
+
+
+
+# ANTIGO############################
 # Tabela 2 | Os 10 piores####
 
 # Cálculo por orientador
@@ -1075,3 +1251,5 @@ dados_evol_gd |>
         plot.caption = element_markdown(margin = margin(t = 3)),
         text = element_text(size = 20)) + 
   coord_cartesian(clip = 'off')
+
+#RASCUNHOS####
