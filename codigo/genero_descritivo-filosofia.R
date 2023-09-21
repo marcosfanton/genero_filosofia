@@ -76,7 +76,7 @@ dadosfi |>
   scale_fill_metro_d() +
   labs(x = "",
        y = "",
-       fill = "Professor/Aluno") +
+       fill = "Professor/Estudante") +
   scale_x_continuous(limits = c(1990, 2021)) +
   scale_y_continuous(labels=scales::percent, position = "right") +
   theme(legend.position = "top",
@@ -85,7 +85,7 @@ dadosfi |>
   coord_cartesian(clip = 'off')  # Permite dados além dos limites do gráfico (seta,p.ex.)
 
 ggsave(
-  "figs/figs_tiff/graf6.tiff",
+  "figs/graf6.png",
   bg = "white",
   width = 17,
   height = 12,
@@ -98,7 +98,7 @@ piores_ies <- dadosfi |>
   group_by(nm_entidade_ensino) |> 
   summarize(total = n()) |> 
   mutate(frequencia = round(total/sum(total)*100,2)) |> 
-  slice_max(total, n = 15)
+  slice_max(total, n = 15) 
 
 # Lista de áreas para filtrar os dados
 lista_ies <- levels(piores_ies$nm_entidade_ensino)
@@ -148,7 +148,7 @@ piores_df <- list(piores_ies,
 tab_piores_ies <- purrr::reduce(piores_df, 
                             left_join, 
                             by = "nm_entidade_ensino") |> 
-  arrange(frequencia_d_Female) 
+  arrange(desc(total)) 
 
 # TABELA 4 | 10 piores ####
 tab4 <- tab_piores_ies |> 
