@@ -274,7 +274,7 @@ gtsave(tab2,
        vwidth = 1400,
        vheight = 1700)
 
-# GRÁFICO 01 | Grandes áreas-Orientadoras-Tempo ####
+# GRÁFICO 01.1 | Grandes áreas-Orientadoras-Tempo ####
 graf1_go <- dados |> 
   group_by(nm_grande_area_conhecimento, an_base, g_orientador) |> 
   summarize(total = n()) |> 
@@ -302,6 +302,40 @@ graf1_go |>
 
 ggsave(
   "figs/graf1.tiff",
+  bg = "white",
+  width = 17,
+  height = 12,
+  dpi = 300,
+  plot = last_plot())
+
+# GRÁFICO 01.2 | Grandes áreas-Discentes-Tempo ####
+graf1_gd <- dados |> 
+  group_by(nm_grande_area_conhecimento, an_base, g_discente) |> 
+  summarize(total = n()) |> 
+  mutate(frequencia = round(total/sum(total)*100,2))
+
+graf1_gd |> 
+  filter(g_discente == "Female") |> 
+  ggplot(aes(x = an_base, 
+             y = frequencia,
+             color = nm_grande_area_conhecimento)) +
+  geom_line(linewidth = 2.5) +
+  scale_x_continuous(limits = c(1991, 2021), breaks = seq(1990, 2020, 5)) +
+  scale_y_continuous(limits = c(0,80), position = "right") +
+  scale_color_metro_d()+
+  theme_classic() +
+  labs(title = "",
+       caption = "", 
+       x = "Ano",
+       y = "%") +
+  theme(legend.title = element_blank(),
+        legend.position = "top",
+        legend.text=element_text(size=25),
+        text = element_text(size = 36, family = "Times New Roman")) +
+  guides(color = guide_legend(ncol = 4))
+
+ggsave(
+  "figs/graf1_2.png",
   bg = "white",
   width = 17,
   height = 12,
@@ -616,3 +650,29 @@ ggsave(
   height = 12,
   dpi = 300,
   plot = last_plot())
+
+# SUPLEMENTAR####
+# TOTAL GÊNEROS####
+# Cálculo por orientador
+dados_go <- dados |> 
+  group_by(g_orientador) |> 
+  summarize(total = n()) |> 
+  mutate(frequencia = round(total/sum(total)*100,2))
+
+# Cálculo por discente
+dados_gd <- dados |> 
+  group_by(g_discente) |> 
+  summarize(total = n()) |> 
+  mutate(frequencia = round(total/sum(total)*100,2))
+
+# Cálculo por orientador-orientando
+dados_god <- dados |> 
+  group_by(g_oridis) |> 
+  summarize(total = n()) |> 
+  mutate(frequencia = round(total/sum(total)*100,2))
+
+# Grandes áreas-Estudantes-Tempo ####
+evo_areas_d <- dados |> 
+  group_by(nm_grande_area_conhecimento, an_base, g_discente) |> 
+  summarize(total = n()) |> 
+  mutate(frequencia = round(total/sum(total)*100,2))
