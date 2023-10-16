@@ -278,10 +278,14 @@ gtsave(tab2,
 graf1_go <- dados |> 
   group_by(nm_grande_area_conhecimento, an_base, g_orientador) |> 
   summarize(total = n()) |> 
-  mutate(frequencia = round(total/sum(total)*100,2))
+  mutate(frequencia = round(total/sum(total)*100,2)) |> 
+  filter(g_orientador == "Female")
+
+# Salvar tabela para referência 
+graf1_go |>
+  readr::write_csv("dados/graf1_go.csv")
 
 graf1_go |> 
-  filter(g_orientador == "Female") |> 
   ggplot(aes(x = an_base, 
              y = frequencia,
              color = nm_grande_area_conhecimento)) +
@@ -312,10 +316,15 @@ ggsave(
 graf1_gd <- dados |> 
   group_by(nm_grande_area_conhecimento, an_base, g_discente) |> 
   summarize(total = n()) |> 
-  mutate(frequencia = round(total/sum(total)*100,2))
+  mutate(frequencia = round(total/sum(total)*100,2)) |> 
+  filter(g_discente == "Female")
+
+# Salvar tabela para referência 
+graf1_gd |>
+  readr::write_csv("dados/graf1_gd.csv")
+
 
 graf1_gd |> 
-  filter(g_discente == "Female") |> 
   ggplot(aes(x = an_base, 
              y = frequencia,
              color = nm_grande_area_conhecimento)) +
