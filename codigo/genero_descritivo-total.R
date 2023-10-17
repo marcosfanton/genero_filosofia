@@ -292,7 +292,7 @@ graf1 |>
   geom_line(linewidth = 2.5) +
   scale_x_continuous(limits = c(1991, 2021), breaks = seq(1990, 2020, 5)) +
   scale_y_continuous(limits = c(0,70), position = "right") +
-  scale_colour_brewer(palette = "Set1") +
+  scale_color_metro_d("full")+
   theme_classic() +
   labs(title = "",
        caption = "", 
@@ -331,7 +331,7 @@ graf2 |>
   geom_line(linewidth = 2.5) +
   scale_x_continuous(limits = c(1991, 2021), breaks = seq(1990, 2020, 5)) +
   scale_y_continuous(limits = c(0,80), position = "right") +
-  scale_colour_brewer(palette = "Set1") +
+  scale_color_metro_d("full")+
   theme_classic() +
   labs(title = "",
        caption = "", 
@@ -376,14 +376,14 @@ graf3_gogd |>
   readr::write_csv("dados/graf3.csv")
 
 # Gráfico 
-graf2_gogd |> ggplot(aes(x = frequencia_o, 
+graf3_gogd |> ggplot(aes(x = frequencia_o, 
                         y = frequencia_d)) +
   geom_point(aes(colour = nm_grande_area_conhecimento),
              shape = 20,
              size = 4.5) +
   scale_x_continuous(limits = c(0, 100)) +
   scale_y_continuous(limits = c(0, 100)) +
-  scale_colour_brewer(palette = "Set1") +
+  scale_color_metro_d("full")+
   theme_classic() +
   labs(x = "Mulheres orientadoras (%)",
        y = "Mulheres estudantes (%)",
