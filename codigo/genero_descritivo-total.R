@@ -375,6 +375,7 @@ graf3_gogd <- left_join(graf3_go,
 graf3_gogd |>
   readr::write_csv("dados/graf3.csv")
 
+# Gráfico 
 graf2_gogd |> ggplot(aes(x = frequencia_o, 
                         y = frequencia_d)) +
   geom_point(aes(colour = nm_grande_area_conhecimento),
@@ -566,6 +567,11 @@ piores_tendencia_o <- piores_evol_o  |>
 piores_evol_o <- piores_evol_o  |> 
   left_join(piores_tendencia_o, by = "nm_area_avaliacao")
 
+# Salvar tabela para referência 
+piores_evol_o |>
+  readr::write_csv("dados/graf4.csv")
+
+
 # GRÁFICO 04 | 10 piores - Orientador####
 piores_evol_o |> 
   filter(g_orientador == "Female") |> 
@@ -623,6 +629,10 @@ piores_tendencia_d <- piores_evol_d  |>
 # Junção 
 piores_evol_d <- piores_evol_d  |> 
   left_join(piores_tendencia_d, by = "nm_area_avaliacao")
+
+# Salvar tabela para referência 
+piores_evol_d |>
+  readr::write_csv("dados/graf5.csv")
 
 # GRÁFICO 05 | 10 piores - Estudante####
 
