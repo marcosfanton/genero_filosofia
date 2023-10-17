@@ -274,25 +274,25 @@ gtsave(tab2,
        vwidth = 1400,
        vheight = 1700)
 
-# GRÁFICO 01.1 | Grandes áreas-Orientadoras-Tempo ####
-graf1_go <- dados |> 
+# GRÁFICO 01 | Grandes áreas-Orientadoras-Tempo ####
+graf1 <- dados |> 
   group_by(nm_grande_area_conhecimento, an_base, g_orientador) |> 
   summarize(total = n()) |> 
   mutate(frequencia = round(total/sum(total)*100,2)) |> 
   filter(g_orientador == "Female")
 
 # Salvar tabela para referência 
-graf1_go |>
-  readr::write_csv("dados/graf1_go.csv")
+graf1 |>
+  readr::write_csv("dados/graf1_orientadores.csv")
 
-graf1_go |> 
+graf1 |> 
   ggplot(aes(x = an_base, 
              y = frequencia,
              color = nm_grande_area_conhecimento)) +
   geom_line(linewidth = 2.5) +
   scale_x_continuous(limits = c(1991, 2021), breaks = seq(1990, 2020, 5)) +
   scale_y_continuous(limits = c(0,70), position = "right") +
-  scale_color_metro_d()+
+  scale_colour_brewer(palette = "Set1")+
   theme_classic() +
   labs(title = "",
        caption = "", 
@@ -305,26 +305,26 @@ graf1_go |>
   guides(color = guide_legend(ncol = 4))
 
 ggsave(
-  "figs/graf1.tiff",
+  "figs/graf1.png",
   bg = "white",
-  width = 17,
+  width = 16,
   height = 12,
   dpi = 300,
   plot = last_plot())
 
-# GRÁFICO 01.2 | Grandes áreas-Discentes-Tempo ####
-graf1_gd <- dados |> 
+# GRÁFICO 02 | Grandes áreas-Discentes-Tempo ####
+graf2 <- dados |> 
   group_by(nm_grande_area_conhecimento, an_base, g_discente) |> 
   summarize(total = n()) |> 
   mutate(frequencia = round(total/sum(total)*100,2)) |> 
   filter(g_discente == "Female")
 
 # Salvar tabela para referência 
-graf1_gd |>
-  readr::write_csv("dados/graf1_gd.csv")
+graf2 |>
+  readr::write_csv("dados/graf2_discentes.csv")
 
 
-graf1_gd |> 
+graf2 |> 
   ggplot(aes(x = an_base, 
              y = frequencia,
              color = nm_grande_area_conhecimento)) +
@@ -344,32 +344,36 @@ graf1_gd |>
   guides(color = guide_legend(ncol = 4))
 
 ggsave(
-  "figs/graf1_2.png",
+  "figs/graf2.png",
   bg = "white",
   width = 17,
   height = 12,
   dpi = 300,
   plot = last_plot())
 
-# GRÁFICO 02 | Orientadora vs Estudante#### 
+# GRÁFICO 03 | Orientadora vs Estudante#### 
 
 # Cálculo por orientador
-graf2_go <- dados |> 
+graf3_go <- dados |> 
   group_by(nm_grande_area_conhecimento, nm_area_avaliacao, g_orientador) |> 
   summarize(total_o = n()) |> 
   mutate(frequencia_o = round(total_o/sum(total_o)*100,2)) |> 
   filter(g_orientador == "Female")
 
 # Cálculo por discente
-graf2_gd <- dados |> 
+graf3_gd <- dados |> 
   group_by(nm_grande_area_conhecimento, nm_area_avaliacao, g_discente) |> 
   summarize(total_d = n()) |> 
   mutate(frequencia_d = round(total_d/sum(total_d)*100,2)) |> 
   filter(g_discente == "Female") 
 
-graf2_gogd <- left_join(graf2_go, 
-                        graf2_gd, 
+graf3_gogd <- left_join(graf3_go, 
+                        graf3_gd, 
                        by = c("nm_grande_area_conhecimento", "nm_area_avaliacao")) 
+
+# Salvar tabela para referência 
+graf3_gogd |>
+  readr::write_csv("dados/graf3.csv")
 
 graf2_gogd |> ggplot(aes(x = frequencia_o, 
                         y = frequencia_d)) +
@@ -415,6 +419,7 @@ piores_areas <- dados |>
   mutate(frequencia_d = round(total_d/sum(total_d)*100,2)) |> 
   ungroup() |> 
   filter(g_discente == "Female")  |> 
+  filter(nm_area_avaliacao != "Materiais") |> 
   slice_min(frequencia_d, n = 10) |> 
   mutate(nm_area_avaliacao = droplevels(nm_area_avaliacao))
 
@@ -542,7 +547,7 @@ gtsave(tab3,
        vwidth = 1400,
        vheight = 1700)
 
-# Gráfico 03 | 10 piores áreas - Orientador####
+# Gráfico 04 | 10 piores áreas - Orientador####
 # Tabela piores-ano-orientador
 piores_evol_o <- dados |> 
   filter(nm_area_avaliacao %in% lista_piores) |> 
@@ -561,8 +566,7 @@ piores_tendencia_o <- piores_evol_o  |>
 piores_evol_o <- piores_evol_o  |> 
   left_join(piores_tendencia_o, by = "nm_area_avaliacao")
 
-# GRÁFICO 03 | 10 piores - Orientador####
-
+# GRÁFICO 04 | 10 piores - Orientador####
 piores_evol_o |> 
   filter(g_orientador == "Female") |> 
   ggplot(aes(x = an_base, 
@@ -594,14 +598,14 @@ piores_evol_o |>
 
 # Salvar gráfico
 ggsave(
-  "figs/figs_tiff/graf3.tiff",
+  "figs/graf4.png",
   bg = "white",
   width = 17,
   height = 12,
   dpi = 300,
   plot = last_plot())
 
-# Gráfico 04 | 10 piores áreas- Estudante####
+# Gráfico 05 | 10 piores áreas- Estudante####
 # Tabela piores-ano-estudante
 piores_evol_d <- dados |> 
   filter(nm_area_avaliacao %in% lista_piores) |> 
@@ -620,7 +624,7 @@ piores_tendencia_d <- piores_evol_d  |>
 piores_evol_d <- piores_evol_d  |> 
   left_join(piores_tendencia_d, by = "nm_area_avaliacao")
 
-# GRÁFICO 04 | 10 piores - Estudante####
+# GRÁFICO 05 | 10 piores - Estudante####
 
 piores_evol_d |> 
   filter(g_discente == "Female") |> 
@@ -653,7 +657,7 @@ piores_evol_d |>
 
 # Salvar gráfico
 ggsave(
-  "figs/figs_tiff/graf4.tiff",
+  "figs/graf5.png",
   bg = "white",
   width = 17,
   height = 12,
