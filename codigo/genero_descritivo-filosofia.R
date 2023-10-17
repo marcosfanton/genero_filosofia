@@ -98,7 +98,7 @@ piores_ies <- dadosfi |>
   group_by(nm_entidade_ensino) |> 
   summarize(total = n()) |> 
   mutate(frequencia = round(total/sum(total)*100,2)) |> 
-  slice_max(total, n = 15) 
+  slice_max(total, n = 15) # Selecionar apenas os 15 piores. 
 
 # Lista de áreas para filtrar os dados
 lista_ies <- levels(piores_ies$nm_entidade_ensino)
@@ -149,6 +149,10 @@ tab_piores_ies <- purrr::reduce(piores_df,
                             left_join, 
                             by = "nm_entidade_ensino") |> 
   arrange(desc(total)) 
+
+# Salvar tabela com todas IFES 
+tab_piores_ies |>
+  readr::write_csv("dados/tab4_total.csv")
 
 # TABELA 4 | 10 piores ####
 tab4 <- tab_piores_ies |> 

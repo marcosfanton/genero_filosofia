@@ -292,7 +292,7 @@ graf1 |>
   geom_line(linewidth = 2.5) +
   scale_x_continuous(limits = c(1991, 2021), breaks = seq(1990, 2020, 5)) +
   scale_y_continuous(limits = c(0,70), position = "right") +
-  scale_colour_brewer(palette = "Set1")+
+  scale_colour_brewer(palette = "Set1") +
   theme_classic() +
   labs(title = "",
        caption = "", 
@@ -331,7 +331,7 @@ graf2 |>
   geom_line(linewidth = 2.5) +
   scale_x_continuous(limits = c(1991, 2021), breaks = seq(1990, 2020, 5)) +
   scale_y_continuous(limits = c(0,80), position = "right") +
-  scale_color_metro_d()+
+  scale_colour_brewer(palette = "Set1") +
   theme_classic() +
   labs(title = "",
        caption = "", 
@@ -344,7 +344,7 @@ graf2 |>
   guides(color = guide_legend(ncol = 4))
 
 ggsave(
-  "figs/graf2.png",
+  "figs/figs_tiff/graf2.tiff",
   bg = "white",
   width = 17,
   height = 12,
@@ -382,7 +382,7 @@ graf2_gogd |> ggplot(aes(x = frequencia_o,
              size = 4.5) +
   scale_x_continuous(limits = c(0, 100)) +
   scale_y_continuous(limits = c(0, 100)) +
-  scale_color_metro_d()+
+  scale_colour_brewer(palette = "Set1") +
   theme_classic() +
   labs(x = "Mulheres orientadoras (%)",
        y = "Mulheres estudantes (%)",
@@ -403,7 +403,7 @@ graf2_gogd |> ggplot(aes(x = frequencia_o,
   
 # Salvar gráfico
 ggsave(
-  "figs/graf2.tiff",
+  "figs/graf3.png",
   bg = "white",
   width = 17,
   height = 12,
