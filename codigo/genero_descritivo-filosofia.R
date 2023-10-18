@@ -32,7 +32,7 @@ fatores <- c("nm_grau_academico",
 dadosfi <- dadosfi  |> 
   mutate(across(all_of(fatores), as.factor))
 
-# GRÁFICO 05 | Filosofia Evolução ####
+# GRÁFICO 06 | Filosofia Evolução ####
 evol_fi <-  dadosfi |> 
   summarize(n = n(),
             .by = c(an_base, nm_grau_academico)) |> 
@@ -62,21 +62,21 @@ ggsave(
   dpi = 300,
   plot = last_plot())
 
-# GRÁFICO 06 | Relação Professor-Aluno####
+# GRÁFICO 07 | Relação Professor-Aluno####
 # Tabela para referência
-graf6 <- dadosfi |> 
+graf7 <- dadosfi |> 
   group_by(an_base, g_oridis) |> 
   summarize(total_od = n()) |> 
   mutate(frequencia_od = round(total_od/sum(total_od)*100,2))
 
-graf6 <- graf6 |> 
+graf7 <- graf7 |> 
   pivot_wider(
   names_from = g_oridis,
   values_from = c(total_od, frequencia_od))
 
 # Salvar tabela com todas IFES 
-graf6 |>
-  readr::write_csv("dados/graf6.csv")
+graf7 |>
+  readr::write_csv("dados/graf7.csv")
 
 
 dadosfi |> 
