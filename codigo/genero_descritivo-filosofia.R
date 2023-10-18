@@ -63,6 +63,22 @@ ggsave(
   plot = last_plot())
 
 # GRÁFICO 06 | Relação Professor-Aluno####
+# Tabela para referência
+graf6 <- dadosfi |> 
+  group_by(an_base, g_oridis) |> 
+  summarize(total_od = n()) |> 
+  mutate(frequencia_od = round(total_od/sum(total_od)*100,2))
+
+graf6 <- graf6 |> 
+  pivot_wider(
+  names_from = g_oridis,
+  values_from = c(total_od, frequencia_od))
+
+# Salvar tabela com todas IFES 
+graf6 |>
+  readr::write_csv("dados/graf6.csv")
+
+
 dadosfi |> 
   mutate(g_oridis = recode(g_oridis,
                            "FF" = "M/M",
