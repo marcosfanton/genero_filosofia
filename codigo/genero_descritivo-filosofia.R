@@ -78,7 +78,7 @@ graf7 <- graf7 |>
 graf7 |>
   readr::write_csv("dados/graf7.csv")
 
-
+# Gráfico 
 dadosfi |> 
   mutate(g_oridis = recode(g_oridis,
                            "FF" = "M/M",
