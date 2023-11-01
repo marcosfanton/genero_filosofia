@@ -70,6 +70,8 @@ catalogo9121 <- catalogo9121  |>
   dplyr::mutate(SG_UF_IES = as.factor(SG_UF_IES),
                 across(where(is.character), 
                        ~ str_squish(str_to_title(., locale = "pt_BR"))), # Padroniza todo texto em caixa alta na primeira letra
+                NM_GRANDE_AREA_CONHECIMENTO = recode(NM_GRANDE_AREA_CONHECIMENTO,
+                                                     "Lingüística, Letras E Artes" = "Linguística, Letras E Artes"),
                 NM_AREA_AVALIACAO = str_replace_all(NM_AREA_AVALIACAO, c(Ii = "II", IIi = "III", Iv = "IV")), # Mantém o nome correto
                 NM_AREA_AVALIACAO = recode(NM_AREA_AVALIACAO, # Recodificação das áreas de avaliação 
                                            "Filosofia / Teologia:subcomissão Filosofia" = "Filosofia", 
@@ -109,6 +111,7 @@ catalogo9121 <- catalogo9121 |>
   drop_na(g_oridis) # Exclui NAs de g_orientador e g_discente (1117944) --> 81.34%
 
 # Banco limpo####
+# N = 1117962
 # Salvar arquivo RAW 
 catalogo9121 |>
   readr::write_csv("dados/bancos/catalogo9121_raw.csv")
