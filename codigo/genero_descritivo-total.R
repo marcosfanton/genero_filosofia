@@ -275,34 +275,57 @@ gtsave(tab2,
        vheight = 1700)
 
 # GRÁFICO 01 | Grandes áreas-Orientadoras-Tempo ####
+# tabela
 graf1 <- dados |> 
   group_by(nm_grande_area_conhecimento, an_base, g_orientador) |> 
   summarize(total = n()) |> 
-  mutate(frequencia = round(total/sum(total)*100,2)) |> 
-  filter(g_orientador == "Female")
+  mutate(frequencia = round(total/sum(total)*100,2)) |>
+  ungroup()
+
+# avaliação 
+variacao_graf1 <- graf1 |> 
+  filter(g_orientador == "Female")  |> 
+  group_by(nm_grande_area_conhecimento)  |> 
+  arrange(an_base)  |> 
+  summarise(variacao = round(((last(frequencia) - first(frequencia))/first(frequencia)) * 100,2))
+
+# junção
+graf1 <- graf1  |> 
+  left_join(variacao_graf1, by = "nm_grande_area_conhecimento")
 
 # Salvar tabela para referência 
 graf1 |>
   readr::write_csv("dados/graf1_orientadores.csv")
 
 graf1 |> 
+  filter(g_orientador == "Female") |> 
   ggplot(aes(x = an_base, 
              y = frequencia,
              color = nm_grande_area_conhecimento)) +
-  geom_line(linewidth = 2.5) +
-  scale_x_continuous(limits = c(1991, 2021), breaks = seq(1990, 2020, 5)) +
+  geom_line(linewidth = 1.5, alpha = 0.4) +
+  geom_smooth(method = "lm",
+              formula = y ~ poly(x, 3),
+              se = FALSE,
+              linewidth = 2.5) +
+  geom_label_repel(aes(label = paste0(variacao, "%")),
+                   data = filter(graf1, 
+                                 an_base == 2021 & g_orientador == "Female"),
+                   show.legend = FALSE,
+                   hjust = 0,
+                   size = 5,
+                   nudge_x = 0.2) +
+  scale_x_continuous(limits = c(1991, 2022), breaks = seq(1990, 2021, 5)) +
   scale_y_continuous(limits = c(0,70), position = "right") +
   scale_color_metro_d("full")+
   theme_classic() +
-  labs(title = "",
-       caption = "", 
-       x = "Ano",
-       y = "%") +
-  theme(legend.title = element_blank(),
-        legend.position = "top",
+  labs(x = "",
+       y = "%",
+       color = "") +
+  theme(legend.position = "top",
         legend.text=element_text(size=25),
-        text = element_text(size = 36, family = "Times New Roman")) +
-  guides(color = guide_legend(ncol = 4))
+        text = element_text(size = 36, family = "Times New Roman")) + 
+  guides(color = guide_legend(ncol = 4)) +
+  coord_cartesian(clip = 'off')
 
 ggsave(
   "figs/graf1.png",
@@ -313,35 +336,65 @@ ggsave(
   plot = last_plot())
 
 # GRÁFICO 02 | Grandes áreas-Discentes-Tempo ####
+# tabela
 graf2 <- dados |> 
   group_by(nm_grande_area_conhecimento, an_base, g_discente) |> 
   summarize(total = n()) |> 
-  mutate(frequencia = round(total/sum(total)*100,2)) |> 
-  filter(g_discente == "Female")
+  mutate(frequencia = round(total/sum(total)*100,2)) |>
+  ungroup()
+
+# avaliação 
+variacao_graf2 <- graf2 |> 
+  filter(g_discente == "Female")  |> 
+  group_by(nm_grande_area_conhecimento)  |> 
+  arrange(an_base)  |> 
+  summarise(variacao = round(((last(frequencia) - first(frequencia))/first(frequencia)) * 100,2))
+
+# junção
+graf2 <- graf2  |> 
+  left_join(variacao_graf2, by = "nm_grande_area_conhecimento")
 
 # Salvar tabela para referência 
 graf2 |>
   readr::write_csv("dados/graf2_discentes.csv")
 
-
 graf2 |> 
+  filter(g_discente == "Female") |> 
   ggplot(aes(x = an_base, 
              y = frequencia,
              color = nm_grande_area_conhecimento)) +
-  geom_line(linewidth = 2.5) +
-  scale_x_continuous(limits = c(1991, 2021), breaks = seq(1990, 2020, 5)) +
-  scale_y_continuous(limits = c(0,80), position = "right") +
+  geom_line(linewidth = 1.5, alpha = 0.4) +
+  geom_smooth(method = "lm",
+              formula = y ~ poly(x, 3),
+              se = FALSE,
+              linewidth = 2.5) +
+  geom_label_repel(aes(label = paste0(variacao, "%")),
+                   data = filter(graf2, 
+                                 an_base == 2021 & g_discente == "Female"),
+                   show.legend = FALSE,
+                   hjust = 0,
+                   size = 5,
+                   nudge_x = 0.2) +
+  scale_x_continuous(limits = c(1991, 2022), breaks = seq(1990, 2021, 5)) +
+  scale_y_continuous(limits = c(0,70), position = "right") +
   scale_color_metro_d("full")+
   theme_classic() +
-  labs(title = "",
-       caption = "", 
-       x = "Ano",
-       y = "%") +
-  theme(legend.title = element_blank(),
-        legend.position = "top",
+  labs(x = "",
+       y = "%",
+       color = "") +
+  theme(legend.position = "top",
         legend.text=element_text(size=25),
-        text = element_text(size = 36, family = "Times New Roman")) +
-  guides(color = guide_legend(ncol = 4))
+        text = element_text(size = 36, family = "Times New Roman")) + 
+  guides(color = guide_legend(ncol = 4)) +
+  coord_cartesian(clip = 'off')
+
+ggsave(
+  "figs/graf2.png",
+  bg = "white",
+  width = 16,
+  height = 12,
+  dpi = 300,
+  plot = last_plot())
 
 ggsave(
   "figs/figs_tiff/graf2.tiff",

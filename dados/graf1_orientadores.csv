@@ -1,278 +1,557 @@
-nm_grande_area_conhecimento,an_base,g_orientador,total,frequencia
-Ciências Agrárias,1991,Female,76,10.75
-Ciências Agrárias,1992,Female,95,12.27
-Ciências Agrárias,1993,Female,123,12.93
-Ciências Agrárias,1994,Female,133,13.81
-Ciências Agrárias,1995,Female,162,13.36
-Ciências Agrárias,1996,Female,205,20.81
-Ciências Agrárias,1997,Female,200,18.57
-Ciências Agrárias,1998,Female,271,23.3
-Ciências Agrárias,1999,Female,293,22.2
-Ciências Agrárias,2000,Female,329,22.85
-Ciências Agrárias,2001,Female,409,23.59
-Ciências Agrárias,2002,Female,485,25.1
-Ciências Agrárias,2003,Female,615,26.99
-Ciências Agrárias,2004,Female,580,26.74
-Ciências Agrárias,2005,Female,705,28.36
-Ciências Agrárias,2006,Female,806,29.73
-Ciências Agrárias,2007,Female,791,28.98
-Ciências Agrárias,2008,Female,925,29.48
-Ciências Agrárias,2009,Female,1037,30.22
-Ciências Agrárias,2010,Female,1091,30.3
-Ciências Agrárias,2011,Female,1215,31.23
-Ciências Agrárias,2012,Female,1434,31.22
-Ciências Agrárias,2013,Female,2061,29.41
-Ciências Agrárias,2014,Female,2260,31.3
-Ciências Agrárias,2015,Female,2286,31.84
-Ciências Agrárias,2016,Female,2407,31.72
-Ciências Agrárias,2017,Female,2276,30.62
-Ciências Agrárias,2018,Female,2495,32.23
-Ciências Agrárias,2019,Female,2669,33.64
-Ciências Agrárias,2020,Female,2224,33.76
-Ciências Agrárias,2021,Female,2127,32.75
-Ciências Biológicas,1991,Female,182,34.4
-Ciências Biológicas,1992,Female,176,27.67
-Ciências Biológicas,1993,Female,244,31.9
-Ciências Biológicas,1994,Female,256,33.42
-Ciências Biológicas,1995,Female,333,35.88
-Ciências Biológicas,1996,Female,331,37.7
-Ciências Biológicas,1997,Female,433,41.12
-Ciências Biológicas,1998,Female,481,43.81
-Ciências Biológicas,1999,Female,526,41.75
-Ciências Biológicas,2000,Female,665,43.58
-Ciências Biológicas,2001,Female,702,43.01
-Ciências Biológicas,2002,Female,843,44.35
-Ciências Biológicas,2003,Female,951,44.52
-Ciências Biológicas,2004,Female,880,43.14
-Ciências Biológicas,2005,Female,1100,47.19
-Ciências Biológicas,2006,Female,1124,46.07
-Ciências Biológicas,2007,Female,1156,46.52
-Ciências Biológicas,2008,Female,1273,46.66
-Ciências Biológicas,2009,Female,1293,46.01
-Ciências Biológicas,2010,Female,1291,47.12
-Ciências Biológicas,2011,Female,1396,44.64
-Ciências Biológicas,2012,Female,1633,47.03
-Ciências Biológicas,2013,Female,2292,45.92
-Ciências Biológicas,2014,Female,2271,45.95
-Ciências Biológicas,2015,Female,2257,45.52
-Ciências Biológicas,2016,Female,2253,46.21
-Ciências Biológicas,2017,Female,2329,45.56
-Ciências Biológicas,2018,Female,2262,45.21
-Ciências Biológicas,2019,Female,2584,46.85
-Ciências Biológicas,2020,Female,2039,46.35
-Ciências Biológicas,2021,Female,1812,44.9
-Ciências Da Saúde,1991,Female,142,20.08
-Ciências Da Saúde,1992,Female,200,18.43
-Ciências Da Saúde,1993,Female,256,23.06
-Ciências Da Saúde,1994,Female,312,24.32
-Ciências Da Saúde,1995,Female,384,25.91
-Ciências Da Saúde,1996,Female,458,32.86
-Ciências Da Saúde,1997,Female,519,32.18
-Ciências Da Saúde,1998,Female,663,36.59
-Ciências Da Saúde,1999,Female,924,38.97
-Ciências Da Saúde,2000,Female,1053,38.46
-Ciências Da Saúde,2001,Female,1116,39.96
-Ciências Da Saúde,2002,Female,1412,41.2
-Ciências Da Saúde,2003,Female,1618,40.06
-Ciências Da Saúde,2004,Female,1650,43.91
-Ciências Da Saúde,2005,Female,2022,45.99
-Ciências Da Saúde,2006,Female,2117,45.99
-Ciências Da Saúde,2007,Female,2324,49.61
-Ciências Da Saúde,2008,Female,2420,49.97
-Ciências Da Saúde,2009,Female,2788,49.87
-Ciências Da Saúde,2010,Female,3018,51.8
-Ciências Da Saúde,2011,Female,3320,52.22
-Ciências Da Saúde,2012,Female,3847,53.6
-Ciências Da Saúde,2013,Female,5216,52.08
-Ciências Da Saúde,2014,Female,5610,53.64
-Ciências Da Saúde,2015,Female,5949,53.69
-Ciências Da Saúde,2016,Female,6299,53.4
-Ciências Da Saúde,2017,Female,6441,53.77
-Ciências Da Saúde,2018,Female,6916,53.66
-Ciências Da Saúde,2019,Female,7386,54.65
-Ciências Da Saúde,2020,Female,6158,53.57
-Ciências Da Saúde,2021,Female,6570,56.57
-Ciências Exatas E Da Terra,1991,Female,133,15.67
-Ciências Exatas E Da Terra,1992,Female,158,17.48
-Ciências Exatas E Da Terra,1993,Female,173,17.35
-Ciências Exatas E Da Terra,1994,Female,216,18.77
-Ciências Exatas E Da Terra,1995,Female,235,18.78
-Ciências Exatas E Da Terra,1996,Female,237,21.7
-Ciências Exatas E Da Terra,1997,Female,276,22.64
-Ciências Exatas E Da Terra,1998,Female,288,22.54
-Ciências Exatas E Da Terra,1999,Female,326,22.03
-Ciências Exatas E Da Terra,2000,Female,387,23.87
-Ciências Exatas E Da Terra,2001,Female,472,25.5
-Ciências Exatas E Da Terra,2002,Female,488,23.59
-Ciências Exatas E Da Terra,2003,Female,571,25.09
-Ciências Exatas E Da Terra,2004,Female,562,25.44
-Ciências Exatas E Da Terra,2005,Female,605,24.3
-Ciências Exatas E Da Terra,2006,Female,634,25
-Ciências Exatas E Da Terra,2007,Female,634,24.86
-Ciências Exatas E Da Terra,2008,Female,700,25.16
-Ciências Exatas E Da Terra,2009,Female,744,24.68
-Ciências Exatas E Da Terra,2010,Female,788,24.5
-Ciências Exatas E Da Terra,2011,Female,843,25.12
-Ciências Exatas E Da Terra,2012,Female,952,25.78
-Ciências Exatas E Da Terra,2013,Female,1403,23.62
-Ciências Exatas E Da Terra,2014,Female,1455,24.36
-Ciências Exatas E Da Terra,2015,Female,1492,23.51
-Ciências Exatas E Da Terra,2016,Female,1558,23.87
-Ciências Exatas E Da Terra,2017,Female,1634,24.77
-Ciências Exatas E Da Terra,2018,Female,1642,24.7
-Ciências Exatas E Da Terra,2019,Female,1766,25.32
-Ciências Exatas E Da Terra,2020,Female,1536,25.94
-Ciências Exatas E Da Terra,2021,Female,1442,25.25
-Ciências Humanas,1991,Female,420,46.67
-Ciências Humanas,1992,Female,702,49.65
-Ciências Humanas,1993,Female,596,45.64
-Ciências Humanas,1994,Female,774,49.97
-Ciências Humanas,1995,Female,927,46.7
-Ciências Humanas,1996,Female,861,51.56
-Ciências Humanas,1997,Female,1046,54.45
-Ciências Humanas,1998,Female,1021,54.8
-Ciências Humanas,1999,Female,1151,54.68
-Ciências Humanas,2000,Female,1413,54.12
-Ciências Humanas,2001,Female,1648,55.56
-Ciências Humanas,2002,Female,1979,54.56
-Ciências Humanas,2003,Female,2231,55.5
-Ciências Humanas,2004,Female,2223,55.39
-Ciências Humanas,2005,Female,2598,55.85
-Ciências Humanas,2006,Female,2712,55.47
-Ciências Humanas,2007,Female,2838,55.57
-Ciências Humanas,2008,Female,3143,56.11
-Ciências Humanas,2009,Female,3420,56.8
-Ciências Humanas,2010,Female,3302,54.61
-Ciências Humanas,2011,Female,3508,54.84
-Ciências Humanas,2012,Female,3794,55.93
-Ciências Humanas,2013,Female,5431,52.92
-Ciências Humanas,2014,Female,5511,52.46
-Ciências Humanas,2015,Female,6057,52.47
-Ciências Humanas,2016,Female,6273,52.53
-Ciências Humanas,2017,Female,6717,53.27
-Ciências Humanas,2018,Female,6967,53.31
-Ciências Humanas,2019,Female,7399,52.48
-Ciências Humanas,2020,Female,6460,52.96
-Ciências Humanas,2021,Female,6658,52.9
-Ciências Sociais Aplicadas,1991,Female,88,17.32
-Ciências Sociais Aplicadas,1992,Female,174,21.04
-Ciências Sociais Aplicadas,1993,Female,207,23.68
-Ciências Sociais Aplicadas,1994,Female,230,25.47
-Ciências Sociais Aplicadas,1995,Female,292,28.54
-Ciências Sociais Aplicadas,1996,Female,253,30.01
-Ciências Sociais Aplicadas,1997,Female,307,32.9
-Ciências Sociais Aplicadas,1998,Female,363,32.64
-Ciências Sociais Aplicadas,1999,Female,504,33.11
-Ciências Sociais Aplicadas,2000,Female,645,30.67
-Ciências Sociais Aplicadas,2001,Female,748,30.38
-Ciências Sociais Aplicadas,2002,Female,980,30.17
-Ciências Sociais Aplicadas,2003,Female,1159,29.96
-Ciências Sociais Aplicadas,2004,Female,1127,31.85
-Ciências Sociais Aplicadas,2005,Female,1343,34.87
-Ciências Sociais Aplicadas,2006,Female,1454,34
-Ciências Sociais Aplicadas,2007,Female,1424,35
-Ciências Sociais Aplicadas,2008,Female,1461,33.47
-Ciências Sociais Aplicadas,2009,Female,1620,35.39
-Ciências Sociais Aplicadas,2010,Female,1622,36.05
-Ciências Sociais Aplicadas,2011,Female,1787,36.64
-Ciências Sociais Aplicadas,2012,Female,2008,36.35
-Ciências Sociais Aplicadas,2013,Female,2687,33.33
-Ciências Sociais Aplicadas,2014,Female,3014,34.2
-Ciências Sociais Aplicadas,2015,Female,3387,36.48
-Ciências Sociais Aplicadas,2016,Female,3680,35.74
-Ciências Sociais Aplicadas,2017,Female,3982,36.49
-Ciências Sociais Aplicadas,2018,Female,4324,36.36
-Ciências Sociais Aplicadas,2019,Female,4709,37.84
-Ciências Sociais Aplicadas,2020,Female,4136,37.44
-Ciências Sociais Aplicadas,2021,Female,4356,38.87
-Engenharias,1991,Female,73,7.46
-Engenharias,1992,Female,85,7.78
-Engenharias,1993,Female,77,6.2
-Engenharias,1994,Female,128,9.87
-Engenharias,1995,Female,148,9.8
-Engenharias,1996,Female,131,11
-Engenharias,1997,Female,133,9.98
-Engenharias,1998,Female,201,12.74
-Engenharias,1999,Female,266,13.68
-Engenharias,2000,Female,319,15.14
-Engenharias,2001,Female,374,15.7
-Engenharias,2002,Female,406,14.44
-Engenharias,2003,Female,540,16.23
-Engenharias,2004,Female,618,16.89
-Engenharias,2005,Female,690,17.09
-Engenharias,2006,Female,720,18.27
-Engenharias,2007,Female,725,18.96
-Engenharias,2008,Female,809,19.82
-Engenharias,2009,Female,938,21.54
-Engenharias,2010,Female,900,21.48
-Engenharias,2011,Female,937,20.76
-Engenharias,2012,Female,1003,20.29
-Engenharias,2013,Female,1396,20.71
-Engenharias,2014,Female,1432,20.54
-Engenharias,2015,Female,1579,20.64
-Engenharias,2016,Female,1796,21.67
-Engenharias,2017,Female,1845,21.53
-Engenharias,2018,Female,1837,20.88
-Engenharias,2019,Female,1936,21.12
-Engenharias,2020,Female,1588,21.75
-Engenharias,2021,Female,1519,21.87
-"Lingüística, Letras E Artes",1991,Female,145,58.23
-"Lingüística, Letras E Artes",1992,Female,214,53.23
-"Lingüística, Letras E Artes",1993,Female,263,55.25
-"Lingüística, Letras E Artes",1994,Female,266,57.33
-"Lingüística, Letras E Artes",1995,Female,369,61.4
-"Lingüística, Letras E Artes",1996,Female,325,64.74
-"Lingüística, Letras E Artes",1997,Female,359,60.95
-"Lingüística, Letras E Artes",1998,Female,349,59.76
-"Lingüística, Letras E Artes",1999,Female,437,59.21
-"Lingüística, Letras E Artes",2000,Female,560,63.78
-"Lingüística, Letras E Artes",2001,Female,693,63.17
-"Lingüística, Letras E Artes",2002,Female,807,63.05
-"Lingüística, Letras E Artes",2003,Female,878,63.67
-"Lingüística, Letras E Artes",2004,Female,938,64.29
-"Lingüística, Letras E Artes",2005,Female,1101,66.73
-"Lingüística, Letras E Artes",2006,Female,1187,65.36
-"Lingüística, Letras E Artes",2007,Female,1340,66.63
-"Lingüística, Letras E Artes",2008,Female,1472,68.27
-"Lingüística, Letras E Artes",2009,Female,1546,68.65
-"Lingüística, Letras E Artes",2010,Female,1415,67.51
-"Lingüística, Letras E Artes",2011,Female,1525,65.09
-"Lingüística, Letras E Artes",2012,Female,1634,64.79
-"Lingüística, Letras E Artes",2013,Female,2264,61.12
-"Lingüística, Letras E Artes",2014,Female,2519,62.24
-"Lingüística, Letras E Artes",2015,Female,2954,64.27
-"Lingüística, Letras E Artes",2016,Female,2866,63.53
-"Lingüística, Letras E Artes",2017,Female,2765,62.57
-"Lingüística, Letras E Artes",2018,Female,3009,61.08
-"Lingüística, Letras E Artes",2019,Female,3122,59.29
-"Lingüística, Letras E Artes",2020,Female,2808,60.34
-"Lingüística, Letras E Artes",2021,Female,2853,60.99
-Multidisciplinar,1993,Female,5,19.23
-Multidisciplinar,1994,Female,5,12.82
-Multidisciplinar,1995,Female,3,6.38
-Multidisciplinar,1996,Female,31,36.05
-Multidisciplinar,1997,Female,51,42.86
-Multidisciplinar,1998,Female,44,26.35
-Multidisciplinar,1999,Female,104,30.77
-Multidisciplinar,2000,Female,125,32.38
-Multidisciplinar,2001,Female,188,36.43
-Multidisciplinar,2002,Female,237,33.66
-Multidisciplinar,2003,Female,380,37.22
-Multidisciplinar,2004,Female,414,39.35
-Multidisciplinar,2005,Female,610,45.69
-Multidisciplinar,2006,Female,655,43.78
-Multidisciplinar,2007,Female,807,44.1
-Multidisciplinar,2008,Female,1113,46.2
-Multidisciplinar,2009,Female,1179,44.81
-Multidisciplinar,2010,Female,1331,46.57
-Multidisciplinar,2011,Female,1575,48.91
-Multidisciplinar,2012,Female,1787,48.64
-Multidisciplinar,2013,Female,2800,47
-Multidisciplinar,2014,Female,3234,48.51
-Multidisciplinar,2015,Female,3697,48.31
-Multidisciplinar,2016,Female,4114,47.89
-Multidisciplinar,2017,Female,4566,47.53
-Multidisciplinar,2018,Female,5035,47.03
-Multidisciplinar,2019,Female,5659,47.17
-Multidisciplinar,2020,Female,5156,47.82
-Multidisciplinar,2021,Female,5189,47.92
+nm_grande_area_conhecimento,an_base,g_orientador,total,frequencia,variacao
+Ciências Agrárias,1991,Female,76,10.72,205.5
+Ciências Agrárias,1991,Male,633,89.28,205.5
+Ciências Agrárias,1992,Female,95,12.26,205.5
+Ciências Agrárias,1992,Male,680,87.74,205.5
+Ciências Agrárias,1993,Female,123,12.93,205.5
+Ciências Agrárias,1993,Male,828,87.07,205.5
+Ciências Agrárias,1994,Female,133,13.81,205.5
+Ciências Agrárias,1994,Male,830,86.19,205.5
+Ciências Agrárias,1995,Female,162,13.36,205.5
+Ciências Agrárias,1995,Male,1051,86.64,205.5
+Ciências Agrárias,1996,Female,205,20.81,205.5
+Ciências Agrárias,1996,Male,780,79.19,205.5
+Ciências Agrárias,1997,Female,200,18.57,205.5
+Ciências Agrárias,1997,Male,877,81.43,205.5
+Ciências Agrárias,1998,Female,271,23.3,205.5
+Ciências Agrárias,1998,Male,892,76.7,205.5
+Ciências Agrárias,1999,Female,293,22.2,205.5
+Ciências Agrárias,1999,Male,1027,77.8,205.5
+Ciências Agrárias,2000,Female,329,22.85,205.5
+Ciências Agrárias,2000,Male,1111,77.15,205.5
+Ciências Agrárias,2001,Female,409,23.59,205.5
+Ciências Agrárias,2001,Male,1325,76.41,205.5
+Ciências Agrárias,2002,Female,485,25.1,205.5
+Ciências Agrárias,2002,Male,1447,74.9,205.5
+Ciências Agrárias,2003,Female,615,26.99,205.5
+Ciências Agrárias,2003,Male,1664,73.01,205.5
+Ciências Agrárias,2004,Female,580,26.74,205.5
+Ciências Agrárias,2004,Male,1589,73.26,205.5
+Ciências Agrárias,2005,Female,705,28.36,205.5
+Ciências Agrárias,2005,Male,1781,71.64,205.5
+Ciências Agrárias,2006,Female,806,29.73,205.5
+Ciências Agrárias,2006,Male,1905,70.27,205.5
+Ciências Agrárias,2007,Female,791,28.98,205.5
+Ciências Agrárias,2007,Male,1938,71.02,205.5
+Ciências Agrárias,2008,Female,925,29.48,205.5
+Ciências Agrárias,2008,Male,2213,70.52,205.5
+Ciências Agrárias,2009,Female,1037,30.22,205.5
+Ciências Agrárias,2009,Male,2394,69.78,205.5
+Ciências Agrárias,2010,Female,1091,30.3,205.5
+Ciências Agrárias,2010,Male,2510,69.7,205.5
+Ciências Agrárias,2011,Female,1215,31.23,205.5
+Ciências Agrárias,2011,Male,2676,68.77,205.5
+Ciências Agrárias,2012,Female,1434,31.22,205.5
+Ciências Agrárias,2012,Male,3159,68.78,205.5
+Ciências Agrárias,2013,Female,2061,29.41,205.5
+Ciências Agrárias,2013,Male,4947,70.59,205.5
+Ciências Agrárias,2014,Female,2260,31.3,205.5
+Ciências Agrárias,2014,Male,4960,68.7,205.5
+Ciências Agrárias,2015,Female,2286,31.84,205.5
+Ciências Agrárias,2015,Male,4894,68.16,205.5
+Ciências Agrárias,2016,Female,2407,31.72,205.5
+Ciências Agrárias,2016,Male,5181,68.28,205.5
+Ciências Agrárias,2017,Female,2276,30.62,205.5
+Ciências Agrárias,2017,Male,5156,69.38,205.5
+Ciências Agrárias,2018,Female,2495,32.23,205.5
+Ciências Agrárias,2018,Male,5247,67.77,205.5
+Ciências Agrárias,2019,Female,2669,33.64,205.5
+Ciências Agrárias,2019,Male,5266,66.36,205.5
+Ciências Agrárias,2020,Female,2224,33.76,205.5
+Ciências Agrárias,2020,Male,4364,66.24,205.5
+Ciências Agrárias,2021,Female,2127,32.75,205.5
+Ciências Agrárias,2021,Male,4368,67.25,205.5
+Ciências Agrárias,NA,Male,1,100,205.5
+Ciências Biológicas,1991,Female,182,34.4,30.52
+Ciências Biológicas,1991,Male,347,65.6,30.52
+Ciências Biológicas,1992,Female,176,27.67,30.52
+Ciências Biológicas,1992,Male,460,72.33,30.52
+Ciências Biológicas,1993,Female,244,31.9,30.52
+Ciências Biológicas,1993,Male,521,68.1,30.52
+Ciências Biológicas,1994,Female,256,33.42,30.52
+Ciências Biológicas,1994,Male,510,66.58,30.52
+Ciências Biológicas,1995,Female,333,35.84,30.52
+Ciências Biológicas,1995,Male,596,64.16,30.52
+Ciências Biológicas,1996,Female,331,37.7,30.52
+Ciências Biológicas,1996,Male,547,62.3,30.52
+Ciências Biológicas,1997,Female,433,41.12,30.52
+Ciências Biológicas,1997,Male,620,58.88,30.52
+Ciências Biológicas,1998,Female,481,43.81,30.52
+Ciências Biológicas,1998,Male,617,56.19,30.52
+Ciências Biológicas,1999,Female,526,41.75,30.52
+Ciências Biológicas,1999,Male,734,58.25,30.52
+Ciências Biológicas,2000,Female,665,43.58,30.52
+Ciências Biológicas,2000,Male,861,56.42,30.52
+Ciências Biológicas,2001,Female,702,43.01,30.52
+Ciências Biológicas,2001,Male,930,56.99,30.52
+Ciências Biológicas,2002,Female,843,44.35,30.52
+Ciências Biológicas,2002,Male,1058,55.65,30.52
+Ciências Biológicas,2003,Female,951,44.52,30.52
+Ciências Biológicas,2003,Male,1185,55.48,30.52
+Ciências Biológicas,2004,Female,880,43.14,30.52
+Ciências Biológicas,2004,Male,1160,56.86,30.52
+Ciências Biológicas,2005,Female,1100,47.19,30.52
+Ciências Biológicas,2005,Male,1231,52.81,30.52
+Ciências Biológicas,2006,Female,1124,46.07,30.52
+Ciências Biológicas,2006,Male,1316,53.93,30.52
+Ciências Biológicas,2007,Female,1156,46.52,30.52
+Ciências Biológicas,2007,Male,1329,53.48,30.52
+Ciências Biológicas,2008,Female,1273,46.66,30.52
+Ciências Biológicas,2008,Male,1455,53.34,30.52
+Ciências Biológicas,2009,Female,1293,46.01,30.52
+Ciências Biológicas,2009,Male,1517,53.99,30.52
+Ciências Biológicas,2010,Female,1291,47.12,30.52
+Ciências Biológicas,2010,Male,1449,52.88,30.52
+Ciências Biológicas,2011,Female,1396,44.64,30.52
+Ciências Biológicas,2011,Male,1731,55.36,30.52
+Ciências Biológicas,2012,Female,1633,47.03,30.52
+Ciências Biológicas,2012,Male,1839,52.97,30.52
+Ciências Biológicas,2013,Female,2292,45.92,30.52
+Ciências Biológicas,2013,Male,2699,54.08,30.52
+Ciências Biológicas,2014,Female,2271,45.95,30.52
+Ciências Biológicas,2014,Male,2671,54.05,30.52
+Ciências Biológicas,2015,Female,2257,45.52,30.52
+Ciências Biológicas,2015,Male,2701,54.48,30.52
+Ciências Biológicas,2016,Female,2253,46.21,30.52
+Ciências Biológicas,2016,Male,2623,53.79,30.52
+Ciências Biológicas,2017,Female,2329,45.56,30.52
+Ciências Biológicas,2017,Male,2783,54.44,30.52
+Ciências Biológicas,2018,Female,2262,45.21,30.52
+Ciências Biológicas,2018,Male,2741,54.79,30.52
+Ciências Biológicas,2019,Female,2584,46.85,30.52
+Ciências Biológicas,2019,Male,2932,53.15,30.52
+Ciências Biológicas,2020,Female,2039,46.35,30.52
+Ciências Biológicas,2020,Male,2360,53.65,30.52
+Ciências Biológicas,2021,Female,1812,44.9,30.52
+Ciências Biológicas,2021,Male,2224,55.1,30.52
+Ciências Da Saúde,1991,Female,142,20.08,181.72
+Ciências Da Saúde,1991,Male,565,79.92,181.72
+Ciências Da Saúde,1992,Female,200,18.42,181.72
+Ciências Da Saúde,1992,Male,886,81.58,181.72
+Ciências Da Saúde,1993,Female,256,23.06,181.72
+Ciências Da Saúde,1993,Male,854,76.94,181.72
+Ciências Da Saúde,1994,Female,312,24.3,181.72
+Ciências Da Saúde,1994,Male,972,75.7,181.72
+Ciências Da Saúde,1995,Female,384,25.89,181.72
+Ciências Da Saúde,1995,Male,1099,74.11,181.72
+Ciências Da Saúde,1996,Female,458,32.86,181.72
+Ciências Da Saúde,1996,Male,936,67.14,181.72
+Ciências Da Saúde,1997,Female,519,32.18,181.72
+Ciências Da Saúde,1997,Male,1094,67.82,181.72
+Ciências Da Saúde,1998,Female,663,36.59,181.72
+Ciências Da Saúde,1998,Male,1149,63.41,181.72
+Ciências Da Saúde,1999,Female,924,38.97,181.72
+Ciências Da Saúde,1999,Male,1447,61.03,181.72
+Ciências Da Saúde,2000,Female,1053,38.46,181.72
+Ciências Da Saúde,2000,Male,1685,61.54,181.72
+Ciências Da Saúde,2001,Female,1116,39.96,181.72
+Ciências Da Saúde,2001,Male,1677,60.04,181.72
+Ciências Da Saúde,2002,Female,1412,41.2,181.72
+Ciências Da Saúde,2002,Male,2015,58.8,181.72
+Ciências Da Saúde,2003,Female,1618,40.06,181.72
+Ciências Da Saúde,2003,Male,2421,59.94,181.72
+Ciências Da Saúde,2004,Female,1650,43.91,181.72
+Ciências Da Saúde,2004,Male,2108,56.09,181.72
+Ciências Da Saúde,2005,Female,2022,45.99,181.72
+Ciências Da Saúde,2005,Male,2375,54.01,181.72
+Ciências Da Saúde,2006,Female,2117,45.99,181.72
+Ciências Da Saúde,2006,Male,2486,54.01,181.72
+Ciências Da Saúde,2007,Female,2324,49.61,181.72
+Ciências Da Saúde,2007,Male,2361,50.39,181.72
+Ciências Da Saúde,2008,Female,2420,49.97,181.72
+Ciências Da Saúde,2008,Male,2423,50.03,181.72
+Ciências Da Saúde,2009,Female,2788,49.87,181.72
+Ciências Da Saúde,2009,Male,2802,50.13,181.72
+Ciências Da Saúde,2010,Female,3018,51.8,181.72
+Ciências Da Saúde,2010,Male,2808,48.2,181.72
+Ciências Da Saúde,2011,Female,3320,52.22,181.72
+Ciências Da Saúde,2011,Male,3038,47.78,181.72
+Ciências Da Saúde,2012,Female,3847,53.6,181.72
+Ciências Da Saúde,2012,Male,3330,46.4,181.72
+Ciências Da Saúde,2013,Female,5216,52.08,181.72
+Ciências Da Saúde,2013,Male,4800,47.92,181.72
+Ciências Da Saúde,2014,Female,5610,53.64,181.72
+Ciências Da Saúde,2014,Male,4849,46.36,181.72
+Ciências Da Saúde,2015,Female,5949,53.69,181.72
+Ciências Da Saúde,2015,Male,5132,46.31,181.72
+Ciências Da Saúde,2016,Female,6299,53.4,181.72
+Ciências Da Saúde,2016,Male,5496,46.6,181.72
+Ciências Da Saúde,2017,Female,6441,53.77,181.72
+Ciências Da Saúde,2017,Male,5537,46.23,181.72
+Ciências Da Saúde,2018,Female,6916,53.66,181.72
+Ciências Da Saúde,2018,Male,5973,46.34,181.72
+Ciências Da Saúde,2019,Female,7386,54.65,181.72
+Ciências Da Saúde,2019,Male,6129,45.35,181.72
+Ciências Da Saúde,2020,Female,6158,53.57,181.72
+Ciências Da Saúde,2020,Male,5337,46.43,181.72
+Ciências Da Saúde,2021,Female,6570,56.57,181.72
+Ciências Da Saúde,2021,Male,5043,43.43,181.72
+Ciências Exatas E Da Terra,1991,Female,133,15.67,61.14
+Ciências Exatas E Da Terra,1991,Male,716,84.33,61.14
+Ciências Exatas E Da Terra,1992,Female,158,17.48,61.14
+Ciências Exatas E Da Terra,1992,Male,746,82.52,61.14
+Ciências Exatas E Da Terra,1993,Female,173,17.33,61.14
+Ciências Exatas E Da Terra,1993,Male,825,82.67,61.14
+Ciências Exatas E Da Terra,1994,Female,216,18.75,61.14
+Ciências Exatas E Da Terra,1994,Male,936,81.25,61.14
+Ciências Exatas E Da Terra,1995,Female,235,18.78,61.14
+Ciências Exatas E Da Terra,1995,Male,1016,81.22,61.14
+Ciências Exatas E Da Terra,1996,Female,237,21.7,61.14
+Ciências Exatas E Da Terra,1996,Male,855,78.3,61.14
+Ciências Exatas E Da Terra,1997,Female,276,22.64,61.14
+Ciências Exatas E Da Terra,1997,Male,943,77.36,61.14
+Ciências Exatas E Da Terra,1998,Female,288,22.54,61.14
+Ciências Exatas E Da Terra,1998,Male,990,77.46,61.14
+Ciências Exatas E Da Terra,1999,Female,326,22.03,61.14
+Ciências Exatas E Da Terra,1999,Male,1154,77.97,61.14
+Ciências Exatas E Da Terra,2000,Female,387,23.87,61.14
+Ciências Exatas E Da Terra,2000,Male,1234,76.13,61.14
+Ciências Exatas E Da Terra,2001,Female,472,25.5,61.14
+Ciências Exatas E Da Terra,2001,Male,1379,74.5,61.14
+Ciências Exatas E Da Terra,2002,Female,488,23.59,61.14
+Ciências Exatas E Da Terra,2002,Male,1581,76.41,61.14
+Ciências Exatas E Da Terra,2003,Female,571,25.09,61.14
+Ciências Exatas E Da Terra,2003,Male,1705,74.91,61.14
+Ciências Exatas E Da Terra,2004,Female,562,25.44,61.14
+Ciências Exatas E Da Terra,2004,Male,1647,74.56,61.14
+Ciências Exatas E Da Terra,2005,Female,605,24.3,61.14
+Ciências Exatas E Da Terra,2005,Male,1885,75.7,61.14
+Ciências Exatas E Da Terra,2006,Female,634,25,61.14
+Ciências Exatas E Da Terra,2006,Male,1902,75,61.14
+Ciências Exatas E Da Terra,2007,Female,634,24.86,61.14
+Ciências Exatas E Da Terra,2007,Male,1916,75.14,61.14
+Ciências Exatas E Da Terra,2008,Female,700,25.16,61.14
+Ciências Exatas E Da Terra,2008,Male,2082,74.84,61.14
+Ciências Exatas E Da Terra,2009,Female,744,24.68,61.14
+Ciências Exatas E Da Terra,2009,Male,2270,75.32,61.14
+Ciências Exatas E Da Terra,2010,Female,788,24.5,61.14
+Ciências Exatas E Da Terra,2010,Male,2428,75.5,61.14
+Ciências Exatas E Da Terra,2011,Female,843,25.12,61.14
+Ciências Exatas E Da Terra,2011,Male,2513,74.88,61.14
+Ciências Exatas E Da Terra,2012,Female,952,25.78,61.14
+Ciências Exatas E Da Terra,2012,Male,2741,74.22,61.14
+Ciências Exatas E Da Terra,2013,Female,1403,23.62,61.14
+Ciências Exatas E Da Terra,2013,Male,4536,76.38,61.14
+Ciências Exatas E Da Terra,2014,Female,1455,24.36,61.14
+Ciências Exatas E Da Terra,2014,Male,4519,75.64,61.14
+Ciências Exatas E Da Terra,2015,Female,1492,23.51,61.14
+Ciências Exatas E Da Terra,2015,Male,4854,76.49,61.14
+Ciências Exatas E Da Terra,2016,Female,1558,23.87,61.14
+Ciências Exatas E Da Terra,2016,Male,4968,76.13,61.14
+Ciências Exatas E Da Terra,2017,Female,1634,24.77,61.14
+Ciências Exatas E Da Terra,2017,Male,4963,75.23,61.14
+Ciências Exatas E Da Terra,2018,Female,1642,24.7,61.14
+Ciências Exatas E Da Terra,2018,Male,5007,75.3,61.14
+Ciências Exatas E Da Terra,2019,Female,1766,25.32,61.14
+Ciências Exatas E Da Terra,2019,Male,5209,74.68,61.14
+Ciências Exatas E Da Terra,2020,Female,1536,25.94,61.14
+Ciências Exatas E Da Terra,2020,Male,4386,74.06,61.14
+Ciências Exatas E Da Terra,2021,Female,1442,25.25,61.14
+Ciências Exatas E Da Terra,2021,Male,4270,74.75,61.14
+Ciências Humanas,1991,Female,420,46.67,13.35
+Ciências Humanas,1991,Male,480,53.33,13.35
+Ciências Humanas,1992,Female,702,49.65,13.35
+Ciências Humanas,1992,Male,712,50.35,13.35
+Ciências Humanas,1993,Female,596,45.53,13.35
+Ciências Humanas,1993,Male,713,54.47,13.35
+Ciências Humanas,1994,Female,774,49.9,13.35
+Ciências Humanas,1994,Male,777,50.1,13.35
+Ciências Humanas,1995,Female,927,46.7,13.35
+Ciências Humanas,1995,Male,1058,53.3,13.35
+Ciências Humanas,1996,Female,861,51.56,13.35
+Ciências Humanas,1996,Male,809,48.44,13.35
+Ciências Humanas,1997,Female,1046,54.45,13.35
+Ciências Humanas,1997,Male,875,45.55,13.35
+Ciências Humanas,1998,Female,1021,54.8,13.35
+Ciências Humanas,1998,Male,842,45.2,13.35
+Ciências Humanas,1999,Female,1151,54.68,13.35
+Ciências Humanas,1999,Male,954,45.32,13.35
+Ciências Humanas,2000,Female,1413,54.12,13.35
+Ciências Humanas,2000,Male,1198,45.88,13.35
+Ciências Humanas,2001,Female,1648,55.56,13.35
+Ciências Humanas,2001,Male,1318,44.44,13.35
+Ciências Humanas,2002,Female,1979,54.56,13.35
+Ciências Humanas,2002,Male,1648,45.44,13.35
+Ciências Humanas,2003,Female,2231,55.5,13.35
+Ciências Humanas,2003,Male,1789,44.5,13.35
+Ciências Humanas,2004,Female,2223,55.39,13.35
+Ciências Humanas,2004,Male,1790,44.61,13.35
+Ciências Humanas,2005,Female,2598,55.85,13.35
+Ciências Humanas,2005,Male,2054,44.15,13.35
+Ciências Humanas,2006,Female,2712,55.47,13.35
+Ciências Humanas,2006,Male,2177,44.53,13.35
+Ciências Humanas,2007,Female,2838,55.57,13.35
+Ciências Humanas,2007,Male,2269,44.43,13.35
+Ciências Humanas,2008,Female,3143,56.11,13.35
+Ciências Humanas,2008,Male,2458,43.89,13.35
+Ciências Humanas,2009,Female,3420,56.8,13.35
+Ciências Humanas,2009,Male,2601,43.2,13.35
+Ciências Humanas,2010,Female,3302,54.61,13.35
+Ciências Humanas,2010,Male,2745,45.39,13.35
+Ciências Humanas,2011,Female,3508,54.84,13.35
+Ciências Humanas,2011,Male,2889,45.16,13.35
+Ciências Humanas,2012,Female,3794,55.93,13.35
+Ciências Humanas,2012,Male,2990,44.07,13.35
+Ciências Humanas,2013,Female,5431,52.92,13.35
+Ciências Humanas,2013,Male,4831,47.08,13.35
+Ciências Humanas,2014,Female,5511,52.46,13.35
+Ciências Humanas,2014,Male,4994,47.54,13.35
+Ciências Humanas,2015,Female,6057,52.47,13.35
+Ciências Humanas,2015,Male,5487,47.53,13.35
+Ciências Humanas,2016,Female,6273,52.53,13.35
+Ciências Humanas,2016,Male,5669,47.47,13.35
+Ciências Humanas,2017,Female,6717,53.27,13.35
+Ciências Humanas,2017,Male,5893,46.73,13.35
+Ciências Humanas,2018,Female,6967,53.31,13.35
+Ciências Humanas,2018,Male,6103,46.69,13.35
+Ciências Humanas,2019,Female,7399,52.48,13.35
+Ciências Humanas,2019,Male,6699,47.52,13.35
+Ciências Humanas,2020,Female,6460,52.96,13.35
+Ciências Humanas,2020,Male,5738,47.04,13.35
+Ciências Humanas,2021,Female,6658,52.9,13.35
+Ciências Humanas,2021,Male,5928,47.1,13.35
+Ciências Sociais Aplicadas,1991,Female,88,17.32,124.42
+Ciências Sociais Aplicadas,1991,Male,420,82.68,124.42
+Ciências Sociais Aplicadas,1992,Female,174,21.04,124.42
+Ciências Sociais Aplicadas,1992,Male,653,78.96,124.42
+Ciências Sociais Aplicadas,1993,Female,207,23.66,124.42
+Ciências Sociais Aplicadas,1993,Male,668,76.34,124.42
+Ciências Sociais Aplicadas,1994,Female,230,25.44,124.42
+Ciências Sociais Aplicadas,1994,Male,674,74.56,124.42
+Ciências Sociais Aplicadas,1995,Female,292,28.54,124.42
+Ciências Sociais Aplicadas,1995,Male,731,71.46,124.42
+Ciências Sociais Aplicadas,1996,Female,253,30.01,124.42
+Ciências Sociais Aplicadas,1996,Male,590,69.99,124.42
+Ciências Sociais Aplicadas,1997,Female,307,32.9,124.42
+Ciências Sociais Aplicadas,1997,Male,626,67.1,124.42
+Ciências Sociais Aplicadas,1998,Female,363,32.64,124.42
+Ciências Sociais Aplicadas,1998,Male,749,67.36,124.42
+Ciências Sociais Aplicadas,1999,Female,504,33.11,124.42
+Ciências Sociais Aplicadas,1999,Male,1018,66.89,124.42
+Ciências Sociais Aplicadas,2000,Female,645,30.67,124.42
+Ciências Sociais Aplicadas,2000,Male,1458,69.33,124.42
+Ciências Sociais Aplicadas,2001,Female,748,30.38,124.42
+Ciências Sociais Aplicadas,2001,Male,1714,69.62,124.42
+Ciências Sociais Aplicadas,2002,Female,980,30.17,124.42
+Ciências Sociais Aplicadas,2002,Male,2268,69.83,124.42
+Ciências Sociais Aplicadas,2003,Female,1159,29.96,124.42
+Ciências Sociais Aplicadas,2003,Male,2710,70.04,124.42
+Ciências Sociais Aplicadas,2004,Female,1127,31.85,124.42
+Ciências Sociais Aplicadas,2004,Male,2412,68.15,124.42
+Ciências Sociais Aplicadas,2005,Female,1343,34.87,124.42
+Ciências Sociais Aplicadas,2005,Male,2509,65.13,124.42
+Ciências Sociais Aplicadas,2006,Female,1454,34,124.42
+Ciências Sociais Aplicadas,2006,Male,2822,66,124.42
+Ciências Sociais Aplicadas,2007,Female,1424,35,124.42
+Ciências Sociais Aplicadas,2007,Male,2645,65,124.42
+Ciências Sociais Aplicadas,2008,Female,1461,33.47,124.42
+Ciências Sociais Aplicadas,2008,Male,2904,66.53,124.42
+Ciências Sociais Aplicadas,2009,Female,1620,35.39,124.42
+Ciências Sociais Aplicadas,2009,Male,2957,64.61,124.42
+Ciências Sociais Aplicadas,2010,Female,1622,36.05,124.42
+Ciências Sociais Aplicadas,2010,Male,2877,63.95,124.42
+Ciências Sociais Aplicadas,2011,Female,1787,36.64,124.42
+Ciências Sociais Aplicadas,2011,Male,3090,63.36,124.42
+Ciências Sociais Aplicadas,2012,Female,2008,36.35,124.42
+Ciências Sociais Aplicadas,2012,Male,3516,63.65,124.42
+Ciências Sociais Aplicadas,2013,Female,2687,33.33,124.42
+Ciências Sociais Aplicadas,2013,Male,5375,66.67,124.42
+Ciências Sociais Aplicadas,2014,Female,3014,34.2,124.42
+Ciências Sociais Aplicadas,2014,Male,5798,65.8,124.42
+Ciências Sociais Aplicadas,2015,Female,3387,36.48,124.42
+Ciências Sociais Aplicadas,2015,Male,5898,63.52,124.42
+Ciências Sociais Aplicadas,2016,Female,3680,35.74,124.42
+Ciências Sociais Aplicadas,2016,Male,6617,64.26,124.42
+Ciências Sociais Aplicadas,2017,Female,3982,36.49,124.42
+Ciências Sociais Aplicadas,2017,Male,6932,63.51,124.42
+Ciências Sociais Aplicadas,2018,Female,4324,36.36,124.42
+Ciências Sociais Aplicadas,2018,Male,7568,63.64,124.42
+Ciências Sociais Aplicadas,2019,Female,4709,37.84,124.42
+Ciências Sociais Aplicadas,2019,Male,7734,62.16,124.42
+Ciências Sociais Aplicadas,2020,Female,4136,37.44,124.42
+Ciências Sociais Aplicadas,2020,Male,6912,62.56,124.42
+Ciências Sociais Aplicadas,2021,Female,4356,38.87,124.42
+Ciências Sociais Aplicadas,2021,Male,6852,61.13,124.42
+Engenharias,1991,Female,73,7.46,193.16
+Engenharias,1991,Male,906,92.54,193.16
+Engenharias,1992,Female,85,7.77,193.16
+Engenharias,1992,Male,1009,92.23,193.16
+Engenharias,1993,Female,77,6.2,193.16
+Engenharias,1993,Male,1165,93.8,193.16
+Engenharias,1994,Female,128,9.87,193.16
+Engenharias,1994,Male,1169,90.13,193.16
+Engenharias,1995,Female,148,9.8,193.16
+Engenharias,1995,Male,1362,90.2,193.16
+Engenharias,1996,Female,131,11,193.16
+Engenharias,1996,Male,1060,89,193.16
+Engenharias,1997,Female,133,9.98,193.16
+Engenharias,1997,Male,1200,90.02,193.16
+Engenharias,1998,Female,201,12.74,193.16
+Engenharias,1998,Male,1377,87.26,193.16
+Engenharias,1999,Female,266,13.68,193.16
+Engenharias,1999,Male,1679,86.32,193.16
+Engenharias,2000,Female,319,15.14,193.16
+Engenharias,2000,Male,1788,84.86,193.16
+Engenharias,2001,Female,374,15.7,193.16
+Engenharias,2001,Male,2008,84.3,193.16
+Engenharias,2002,Female,406,14.44,193.16
+Engenharias,2002,Male,2405,85.56,193.16
+Engenharias,2003,Female,540,16.23,193.16
+Engenharias,2003,Male,2788,83.77,193.16
+Engenharias,2004,Female,618,16.89,193.16
+Engenharias,2004,Male,3042,83.11,193.16
+Engenharias,2005,Female,690,17.09,193.16
+Engenharias,2005,Male,3347,82.91,193.16
+Engenharias,2006,Female,720,18.27,193.16
+Engenharias,2006,Male,3220,81.73,193.16
+Engenharias,2007,Female,725,18.96,193.16
+Engenharias,2007,Male,3098,81.04,193.16
+Engenharias,2008,Female,809,19.82,193.16
+Engenharias,2008,Male,3273,80.18,193.16
+Engenharias,2009,Female,938,21.54,193.16
+Engenharias,2009,Male,3417,78.46,193.16
+Engenharias,2010,Female,900,21.48,193.16
+Engenharias,2010,Male,3290,78.52,193.16
+Engenharias,2011,Female,937,20.76,193.16
+Engenharias,2011,Male,3577,79.24,193.16
+Engenharias,2012,Female,1003,20.29,193.16
+Engenharias,2012,Male,3940,79.71,193.16
+Engenharias,2013,Female,1396,20.71,193.16
+Engenharias,2013,Male,5346,79.29,193.16
+Engenharias,2014,Female,1432,20.54,193.16
+Engenharias,2014,Male,5539,79.46,193.16
+Engenharias,2015,Female,1579,20.64,193.16
+Engenharias,2015,Male,6073,79.36,193.16
+Engenharias,2016,Female,1796,21.67,193.16
+Engenharias,2016,Male,6491,78.33,193.16
+Engenharias,2017,Female,1845,21.53,193.16
+Engenharias,2017,Male,6726,78.47,193.16
+Engenharias,2018,Female,1837,20.88,193.16
+Engenharias,2018,Male,6959,79.12,193.16
+Engenharias,2019,Female,1936,21.12,193.16
+Engenharias,2019,Male,7231,78.88,193.16
+Engenharias,2020,Female,1588,21.75,193.16
+Engenharias,2020,Male,5714,78.25,193.16
+Engenharias,2021,Female,1519,21.87,193.16
+Engenharias,2021,Male,5427,78.13,193.16
+"Linguística, Letras E Artes",1991,Female,145,58.23,4.74
+"Linguística, Letras E Artes",1991,Male,104,41.77,4.74
+"Linguística, Letras E Artes",1992,Female,214,53.23,4.74
+"Linguística, Letras E Artes",1992,Male,188,46.77,4.74
+"Linguística, Letras E Artes",1993,Female,263,55.25,4.74
+"Linguística, Letras E Artes",1993,Male,213,44.75,4.74
+"Linguística, Letras E Artes",1994,Female,266,57.33,4.74
+"Linguística, Letras E Artes",1994,Male,198,42.67,4.74
+"Linguística, Letras E Artes",1995,Female,369,61.4,4.74
+"Linguística, Letras E Artes",1995,Male,232,38.6,4.74
+"Linguística, Letras E Artes",1996,Female,325,64.74,4.74
+"Linguística, Letras E Artes",1996,Male,177,35.26,4.74
+"Linguística, Letras E Artes",1997,Female,359,60.95,4.74
+"Linguística, Letras E Artes",1997,Male,230,39.05,4.74
+"Linguística, Letras E Artes",1998,Female,349,59.76,4.74
+"Linguística, Letras E Artes",1998,Male,235,40.24,4.74
+"Linguística, Letras E Artes",1999,Female,437,59.21,4.74
+"Linguística, Letras E Artes",1999,Male,301,40.79,4.74
+"Linguística, Letras E Artes",2000,Female,560,63.78,4.74
+"Linguística, Letras E Artes",2000,Male,318,36.22,4.74
+"Linguística, Letras E Artes",2001,Female,693,63.17,4.74
+"Linguística, Letras E Artes",2001,Male,404,36.83,4.74
+"Linguística, Letras E Artes",2002,Female,807,63.05,4.74
+"Linguística, Letras E Artes",2002,Male,473,36.95,4.74
+"Linguística, Letras E Artes",2003,Female,878,63.67,4.74
+"Linguística, Letras E Artes",2003,Male,501,36.33,4.74
+"Linguística, Letras E Artes",2004,Female,938,64.29,4.74
+"Linguística, Letras E Artes",2004,Male,521,35.71,4.74
+"Linguística, Letras E Artes",2005,Female,1101,66.73,4.74
+"Linguística, Letras E Artes",2005,Male,549,33.27,4.74
+"Linguística, Letras E Artes",2006,Female,1187,65.36,4.74
+"Linguística, Letras E Artes",2006,Male,629,34.64,4.74
+"Linguística, Letras E Artes",2007,Female,1340,66.63,4.74
+"Linguística, Letras E Artes",2007,Male,671,33.37,4.74
+"Linguística, Letras E Artes",2008,Female,1472,68.27,4.74
+"Linguística, Letras E Artes",2008,Male,684,31.73,4.74
+"Linguística, Letras E Artes",2009,Female,1546,68.65,4.74
+"Linguística, Letras E Artes",2009,Male,706,31.35,4.74
+"Linguística, Letras E Artes",2010,Female,1415,67.51,4.74
+"Linguística, Letras E Artes",2010,Male,681,32.49,4.74
+"Linguística, Letras E Artes",2011,Female,1525,65.09,4.74
+"Linguística, Letras E Artes",2011,Male,818,34.91,4.74
+"Linguística, Letras E Artes",2012,Female,1634,64.79,4.74
+"Linguística, Letras E Artes",2012,Male,888,35.21,4.74
+"Linguística, Letras E Artes",2013,Female,2264,61.12,4.74
+"Linguística, Letras E Artes",2013,Male,1440,38.88,4.74
+"Linguística, Letras E Artes",2014,Female,2519,62.24,4.74
+"Linguística, Letras E Artes",2014,Male,1528,37.76,4.74
+"Linguística, Letras E Artes",2015,Female,2954,64.27,4.74
+"Linguística, Letras E Artes",2015,Male,1642,35.73,4.74
+"Linguística, Letras E Artes",2016,Female,2866,63.53,4.74
+"Linguística, Letras E Artes",2016,Male,1645,36.47,4.74
+"Linguística, Letras E Artes",2017,Female,2765,62.57,4.74
+"Linguística, Letras E Artes",2017,Male,1654,37.43,4.74
+"Linguística, Letras E Artes",2018,Female,3009,61.08,4.74
+"Linguística, Letras E Artes",2018,Male,1917,38.92,4.74
+"Linguística, Letras E Artes",2019,Female,3122,59.29,4.74
+"Linguística, Letras E Artes",2019,Male,2144,40.71,4.74
+"Linguística, Letras E Artes",2020,Female,2808,60.34,4.74
+"Linguística, Letras E Artes",2020,Male,1846,39.66,4.74
+"Linguística, Letras E Artes",2021,Female,2853,60.99,4.74
+"Linguística, Letras E Artes",2021,Male,1825,39.01,4.74
+Multidisciplinar,1992,Male,12,100,149.19
+Multidisciplinar,1993,Female,5,19.23,149.19
+Multidisciplinar,1993,Male,21,80.77,149.19
+Multidisciplinar,1994,Female,5,12.82,149.19
+Multidisciplinar,1994,Male,34,87.18,149.19
+Multidisciplinar,1995,Female,3,6.38,149.19
+Multidisciplinar,1995,Male,44,93.62,149.19
+Multidisciplinar,1996,Female,31,36.05,149.19
+Multidisciplinar,1996,Male,55,63.95,149.19
+Multidisciplinar,1997,Female,51,42.86,149.19
+Multidisciplinar,1997,Male,68,57.14,149.19
+Multidisciplinar,1998,Female,44,26.35,149.19
+Multidisciplinar,1998,Male,123,73.65,149.19
+Multidisciplinar,1999,Female,104,30.77,149.19
+Multidisciplinar,1999,Male,234,69.23,149.19
+Multidisciplinar,2000,Female,125,32.38,149.19
+Multidisciplinar,2000,Male,261,67.62,149.19
+Multidisciplinar,2001,Female,188,36.43,149.19
+Multidisciplinar,2001,Male,328,63.57,149.19
+Multidisciplinar,2002,Female,237,33.66,149.19
+Multidisciplinar,2002,Male,467,66.34,149.19
+Multidisciplinar,2003,Female,380,37.22,149.19
+Multidisciplinar,2003,Male,641,62.78,149.19
+Multidisciplinar,2004,Female,414,39.35,149.19
+Multidisciplinar,2004,Male,638,60.65,149.19
+Multidisciplinar,2005,Female,610,45.69,149.19
+Multidisciplinar,2005,Male,725,54.31,149.19
+Multidisciplinar,2006,Female,655,43.78,149.19
+Multidisciplinar,2006,Male,841,56.22,149.19
+Multidisciplinar,2007,Female,807,44.1,149.19
+Multidisciplinar,2007,Male,1023,55.9,149.19
+Multidisciplinar,2008,Female,1113,46.2,149.19
+Multidisciplinar,2008,Male,1296,53.8,149.19
+Multidisciplinar,2009,Female,1179,44.81,149.19
+Multidisciplinar,2009,Male,1452,55.19,149.19
+Multidisciplinar,2010,Female,1331,46.57,149.19
+Multidisciplinar,2010,Male,1527,53.43,149.19
+Multidisciplinar,2011,Female,1575,48.91,149.19
+Multidisciplinar,2011,Male,1645,51.09,149.19
+Multidisciplinar,2012,Female,1787,48.64,149.19
+Multidisciplinar,2012,Male,1887,51.36,149.19
+Multidisciplinar,2013,Female,2800,47,149.19
+Multidisciplinar,2013,Male,3157,53,149.19
+Multidisciplinar,2014,Female,3234,48.51,149.19
+Multidisciplinar,2014,Male,3432,51.49,149.19
+Multidisciplinar,2015,Female,3697,48.31,149.19
+Multidisciplinar,2015,Male,3955,51.69,149.19
+Multidisciplinar,2016,Female,4114,47.89,149.19
+Multidisciplinar,2016,Male,4476,52.11,149.19
+Multidisciplinar,2017,Female,4566,47.53,149.19
+Multidisciplinar,2017,Male,5041,52.47,149.19
+Multidisciplinar,2018,Female,5035,47.03,149.19
+Multidisciplinar,2018,Male,5672,52.97,149.19
+Multidisciplinar,2019,Female,5659,47.17,149.19
+Multidisciplinar,2019,Male,6337,52.83,149.19
+Multidisciplinar,2020,Female,5156,47.82,149.19
+Multidisciplinar,2020,Male,5626,52.18,149.19
+Multidisciplinar,2021,Female,5189,47.92,149.19
+Multidisciplinar,2021,Male,5639,52.08,149.19
