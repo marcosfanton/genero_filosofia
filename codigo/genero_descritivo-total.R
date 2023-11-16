@@ -567,7 +567,7 @@ graf4 |>
                    size = 3,
                    nudge_x = 0.4) +
   scale_x_continuous(limits = c(1991, 2022), breaks = seq(1990, 2021, 5)) +
-  scale_y_continuous(limits = c(0,70), position = "right") +
+  scale_y_continuous(limits = c(0,40), position = "right") +
   scale_color_metro_d("full")+
   theme_classic() +
   labs(x = "",
@@ -627,7 +627,7 @@ graf5 |>
                    size = 3,
                    nudge_x = 0.4) +
   scale_x_continuous(limits = c(1991, 2022), breaks = seq(1990, 2021, 5)) +
-  scale_y_continuous(limits = c(0,70), position = "right") +
+  scale_y_continuous(limits = c(0,50), position = "right") +
   scale_color_metro_d("full")+
   theme_classic() +
   labs(x = "",
