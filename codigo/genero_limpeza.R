@@ -68,11 +68,11 @@ catalogo9121 <- dplyr::bind_rows(
 # Limpeza do texto e padronização de variáveis####
 catalogo9121 <- catalogo9121  |> 
   dplyr::mutate(SG_UF_IES = as.factor(SG_UF_IES),
-                across(where(is.character), 
-                       ~ str_squish(str_to_title(., locale = "pt_BR"))), # Padroniza todo texto em caixa alta na primeira letra
+                dplyr::across(where(is.character), 
+                       ~ stringr::str_squish(str_to_title(., locale = "pt_BR"))), # Padroniza todo texto em caixa alta na primeira letra
                 NM_GRANDE_AREA_CONHECIMENTO = recode(NM_GRANDE_AREA_CONHECIMENTO,
                                                      "Lingüística, Letras E Artes" = "Linguística, Letras E Artes"),
-                NM_AREA_AVALIACAO = str_replace_all(NM_AREA_AVALIACAO, c(Ii = "II", IIi = "III", Iv = "IV")), # Mantém o nome correto
+                NM_AREA_AVALIACAO = stringr::str_replace_all(NM_AREA_AVALIACAO, c(Ii = "II", IIi = "III", Iv = "IV")), # Mantém o nome correto
                 NM_AREA_AVALIACAO = recode(NM_AREA_AVALIACAO, # Recodificação das áreas de avaliação 
                                            "Filosofia / Teologia:subcomissão Filosofia" = "Filosofia", 
                                            "Filosofia/Teologia:subcomissão Filosofia" = "Filosofia",
@@ -103,15 +103,16 @@ catalogo9121 <- catalogo9121  |>
       g_orientador == "Female" & g_discente == "Male" ~ "FM",
       g_orientador == "Female" & g_discente == "Female" ~ "FF")
     ))
-# N = 1374373
+# N = 1374373 (1991-2021)
 # Exclui NA's de variáveis da análise
 catalogo9121 <- catalogo9121 |> 
-  filter(nm_grau_academico != "Doutorado Profissional") |>  # Exclusão de 39 observações (n = 1374334)
-  filter(nm_grande_area_conhecimento != "") |>  # Exclui 2 observação com fator em branco (1374332)
-  drop_na(g_oridis) # Exclui NAs de g_orientador e g_discente (1117944) --> 81.34%
+  dplyr::filter(nm_grau_academico != "Doutorado Profissional") |>  # Exclusão de 39 observações (n = 1374334)
+  dplyr::filter(nm_grande_area_conhecimento != "") |>  # Exclui 2 observação com fator em branco (1374332)
+  tidyr::drop_na(g_oridis) |> # Exclui NAs de g_orientador e g_discente (-256370) (1117944) --> 81.34% 
+  tidyr::drop_na(an_base) # Exclui 1 observação sem ano.
 
 # Banco limpo####
-# N = 1117962
+# N = 1117961
 # Salvar arquivo RAW 
 catalogo9121 |>
   readr::write_csv("dados/bancos/catalogo9121_raw.csv")

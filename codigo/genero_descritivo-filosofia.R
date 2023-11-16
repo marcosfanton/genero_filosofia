@@ -240,3 +240,20 @@ gtsave(tab4,
        path = "figs",
        vwidth = 1400,
        vheight = 1700)
+
+# Razão de prevalência####
+
+
+#Matriz 2x2 para cálculo de razão de prevalência
+matriz <- dados |>  
+  filter(nm_area_avaliacao == "Filosofia") |> 
+  drop_na(g_discente, g_orientador) |> 
+  tabyl(g_orientador, g_discente) |> 
+  adorn_totals(c("row", "col"))
+
+matriz1 <- matriz  |> 
+  remove_rownames()  |> 
+  column_to_rownames(var = "g_orientador")
+
+epi.2by2(dat = matriz1, method = "cross.sectional",
+         conf.level = 0.95, units = 100, outcome = "as.columns")

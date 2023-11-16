@@ -76,7 +76,7 @@ tab_grande_area <- purrr::reduce(lista_grande_area,
 tab_grande_area <- tab_grande_area  |> 
   bind_rows(
     tab_grande_area  |> 
-      summarise(across(contains("total"), sum)) |> 
+      summarise(across(contains(c("total", "frequencia")), sum))) |> 
       mutate(areas = "Total")
   )
 
