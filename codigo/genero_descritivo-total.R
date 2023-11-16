@@ -19,6 +19,7 @@ fatores <- c("nm_grande_area_conhecimento",
              "g_orientador", 
              "g_discente", 
              "g_oridis")
+
 dados <- dados  |> 
   mutate(across(all_of(fatores), as.factor))
 
