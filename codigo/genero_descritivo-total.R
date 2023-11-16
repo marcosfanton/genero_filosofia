@@ -23,44 +23,29 @@ dados <- dados  |>
   mutate(across(all_of(fatores), as.factor))
 
 # Tabela 1 | Grandes Áreas ####
-# Cálculo por Grande Área#### **NOTA: CRIAR FUNÇÃO***
+# Função para criar Tabelas 1 e 2####
+tabfun <- function(dados, var_group1, var_group2) {
+  dados |> 
+    group_by({{var_group1}}, {{var_group2}}) |> 
+    summarize(total = n()) |> 
+    mutate(frequencia = round(total / sum(total) * 100, 2)) |>
+    ungroup() |> 
+    rename(!!paste("total", as.character(substitute(var_group2)), sep = "_") := total,
+           !!paste("frequencia", as.character(substitute(var_group2)), sep = "_") := frequencia) |> 
+    pivot_wider(names_from = {{var_group2}},
+                values_from = matches("total|frequencia"))
+}
+
+# Cálculo por Grande Área
 dados_areas <- dados |> 
   group_by(nm_grande_area_conhecimento) |> 
   summarize(total = n()) |> 
   mutate(frequencia = round(total/sum(total)*100,2)) 
 
-# Cálculo por orientador
-dados_areas_go <- dados |> 
-  group_by(nm_grande_area_conhecimento, g_orientador) |> 
-  summarize(total_o = n()) |> 
-  mutate(frequencia_o = round(total_o/sum(total_o)*100,2))
-
-dados_areas_go <- dados_areas_go |> 
-  pivot_wider(
-    names_from = g_orientador,
-    values_from = c(total_o, frequencia_o))
-
-# Cálculo por discente
-dados_areas_gd <- dados |> 
-  group_by(nm_grande_area_conhecimento, g_discente) |> 
-  summarize(total_d = n()) |> 
-  mutate(frequencia_d = round(total_d/sum(total_d)*100,2))
-
-dados_areas_gd <- dados_areas_gd |> 
-  pivot_wider(
-    names_from = g_discente,
-    values_from = c(total_d, frequencia_d))
-
-# Cálculo por orientador-orientando
-dados_areas_god <- dados |> 
-  group_by(nm_grande_area_conhecimento, g_oridis) |> 
-  summarize(total_od = n()) |> 
-  mutate(frequencia_od = round(total_od/sum(total_od)*100,2))
-
-dados_areas_god <- dados_areas_god |> 
-  pivot_wider(
-    names_from = g_oridis,
-    values_from = c(total_od, frequencia_od))
+# Cálculo por orientador/estudantes
+dados_areas_go <- tabfun(dados, nm_grande_area_conhecimento, g_orientador)
+dados_areas_gd <- tabfun(dados, nm_grande_area_conhecimento, g_discente)
+dados_areas_god <- tabfun(dados, nm_grande_area_conhecimento, g_oridis)
 
 # Agrupamento grandes áreas####
 lista_grande_area <- list(dados_areas, 
@@ -78,8 +63,7 @@ tab_grande_area <- tab_grande_area  |>
     tab_grande_area  |> 
       summarise(across(contains(c("total", "frequencia")), sum))) |> 
       mutate(areas = "Total")
-  )
-
+  
 # TABELA 1 | Grandes Áreas ####
 
 tab1 <- tab_grande_area |> 
@@ -88,51 +72,51 @@ tab1 <- tab_grande_area |>
     columns = c(total, frequencia), # Total
     pattern = "{1} ({2})") |> 
   cols_merge(
-    columns = c(total_d_Male, frequencia_d_Male), # Discentes Homens
+    columns = c(total_g_discente_Male, frequencia_g_discente_Male), # Discentes Homens
     pattern = "{1} ({2})") |> 
   cols_merge(
-    columns = c(total_d_Female, frequencia_d_Female), # Discentes Mulheres
+    columns = c(total_g_discente_Female, frequencia_g_discente_Female), # Discentes Mulheres
     pattern = "{1} ({2})") |> 
   cols_merge(
-    columns = c(total_o_Male, frequencia_o_Male), # Orientadores Homens
+    columns = c(total_g_orientador_Male, frequencia_g_orientador_Male), # Orientadores Homens
     pattern = "{1} ({2})") |> 
   cols_merge(
-    columns = c(total_o_Female, frequencia_o_Female), # Orientadoras Mulheres
+    columns = c(total_g_orientador_Female, frequencia_g_orientador_Female), # Orientadoras Mulheres
     pattern = "{1} ({2})") |> 
   cols_merge(
-    columns = c(total_od_FF, frequencia_od_FF), # Mulher-Mulher
+    columns = c(total_g_oridis_FF, frequencia_g_oridis_FF), # Mulher-Mulher
     pattern = "{1} ({2})") |>
   cols_merge(
-    columns = c(total_od_FM, frequencia_od_FM), # Mulher-Homem
+    columns = c(total_g_oridis_FM, frequencia_g_oridis_FM), # Mulher-Homem
     pattern = "{1} ({2})") |>
   cols_merge(
-    columns = c(total_od_MF, frequencia_od_MF), # Homem-Mulher
+    columns = c(total_g_oridis_MF, frequencia_g_oridis_MF), # Homem-Mulher
     pattern = "{1} ({2})") |>
   cols_merge(
-    columns = c(total_od_MM, frequencia_od_MM), # Homem-Homem
+    columns = c(total_g_oridis_MM, frequencia_g_oridis_MM), # Homem-Homem
     pattern = "{1} ({2})") |>
   tab_spanner(
     label = "Discente n(%)",
-    columns = c(total_d_Male, total_d_Female)) |> 
+    columns = c(total_g_discente_Male, total_g_discente_Female)) |> 
   tab_spanner(   # Títulos
     label = "Orientador(a) n(%)",  
-    columns = c(total_o_Male, total_o_Female)) |>
+    columns = c(total_g_orientador_Male, total_g_orientador_Female)) |>
   tab_spanner(
     label = "Orientador(a)/Discente n(%)",
-    columns = c(total_od_FF, total_od_FM, total_od_MF,total_od_MM)) |> 
+    columns = c(total_g_oridis_FF, total_g_oridis_FM, total_g_oridis_MF,total_g_oridis_MM)) |> 
   cols_label(
     total = "Trabalhos",
-    total_o_Male = "H",
-    total_o_Female = "M",
-    total_d_Female = "M",
-    total_d_Male = "H",
-    total_od_FF = "M/M",
-    total_od_FM = "M/H",
-    total_od_MF = "H/M",
-    total_od_MM = "H/H"
+    total_g_orientador_Male = "H",
+    total_g_orientador_Female = "M",
+    total_g_discente_Female = "M",
+    total_g_discente_Male = "H",
+    total_g_oridis_FF = "M/M",
+    total_g_oridis_FM = "M/H",
+    total_g_oridis_MF = "H/M",
+    total_g_oridis_MM = "H/H"
   ) |> 
   tab_header(
-    title = "Tabela 1. Descrição do gênero de orientadores e discentes das teses e dissertações defendidas no Brasil de acordo com as Grandes Áreas da CAPES (1991-2021)"
+    title = "Descrição do gênero de orientadores e estudantes de teses e dissertações defendidas no Brasil de acordo com as Grandes Áreas da CAPES (1991-2021)"
   ) |> 
   cols_align(
     align = "center") |> 
@@ -150,7 +134,7 @@ tab1 <- tab_grande_area |>
 #Salvar
 gtsave(tab1, 
        "tab1_grande-area.docx", 
-       path = "figs",
+       path = "dados",
        vwidth = 1400,
        vheight = 1700)
 
