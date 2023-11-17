@@ -542,7 +542,9 @@ variacao_graf4 <- graf4  |>
 
 # Junção 
 graf4 <- graf4  |> 
-  left_join(variacao_graf4, by = "nm_area_avaliacao")
+  left_join(variacao_graf4, by = "nm_area_avaliacao") |> 
+  mutate(posicao = "Orientadoras") |> 
+  rename(genero = g_orientador)
 
 # Salvar tabela para referência 
 graf4 |>
@@ -602,12 +604,13 @@ variacao_graf5 <- graf5  |>
 
 # Junção 
 graf5 <- graf5  |> 
-  left_join(variacao_graf5, by = "nm_area_avaliacao")
+  left_join(variacao_graf5, by = "nm_area_avaliacao") |> 
+  mutate(posicao = "Autoras") |> 
+  rename(genero = g_discente)
 
 # Salvar tabela para referência 
 graf5 |>
   readr::write_csv("dados/graf5_discentes.csv")
-
 
 # GRÁFICO 05 | 10 piores - Orientador####
 graf5 |> 
@@ -646,6 +649,50 @@ ggsave(
   bg = "white",
   width = 8,
   height = 6,
+  dpi = 1200,
+  plot = last_plot())
+
+
+# GRÁFICO 04+5 | 10 piores - Orientadora - Autora####
+graf45 <- bind_rows(graf4, graf5) 
+
+graf45 |> 
+  filter(genero == "Female") |> 
+  ggplot(aes(x = an_base, 
+             y = frequencia,
+             color = nm_area_avaliacao)) +
+  geom_line(linewidth = 1, alpha = 0.2) +
+  geom_smooth(method = "lm",
+              formula = y ~ poly(x, 3),
+              se = FALSE,
+              linewidth = 1.6) +
+  geom_label_repel(aes(label = paste0(scales::comma_format(decimal.mark = ",")(variacao), "%")),
+                   data = filter(graf45, 
+                                 an_base == 2021 & genero == "Female"),
+                   show.legend = FALSE,
+                   hjust = 0,
+                   size = 3,
+                   nudge_x = 0.4) +
+  facet_wrap(~posicao, ncol =1, scales = "free")+
+  scale_x_continuous(limits = c(1991, 2022), breaks = seq(1990, 2021, 5)) +
+  scale_y_continuous(position = "right") +
+  scale_color_metro_d("full")+
+  theme_classic() +
+  labs(x = "",
+       y = "%",
+       color = "") +
+  theme(legend.position = "top",
+        legend.text=element_text(size=14),
+        text = element_text(size = 18, family = "Times New Roman")) + 
+  guides(color = guide_legend(ncol = 4)) +
+  coord_cartesian(clip = 'off')
+
+# Salvar gráfico
+ggsave(
+  "figs/graf45.png",
+  bg = "white",
+  width = 9,
+  height = 10,
   dpi = 1200,
   plot = last_plot())
 
