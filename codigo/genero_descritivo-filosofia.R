@@ -15,6 +15,8 @@ library(stringi) # Manipulação de texto
 #Isso foi feito exclusivamente para a área de filosofia. 
 #O banco origina-se de outro projeto, que pode ser encontrado no seguinte endereço:
 #https://github.com/marcosfanton/stm_filobr - Ver codigo/stm_limpeza.R 
+# SessionInfo::
+# R version 4.1.2 (2021-11-01) - macOS 14.0 Platform: aarch64-apple-darwin20 (64-bit)
 
 dadosfi <- read.csv("dados/catalogo.csv") |>  #n: 12525
   filter(an_base >= 1991) |> # Exclusão - 172 observações (n: 12353)

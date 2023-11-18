@@ -11,6 +11,8 @@ library(genderBR) # Dicionário de gênero com base no primeiro nome
 # Grupo: Catálogo de Teses e Dissertações - Brasil 
 # Todos os bancos foram baixados (em .csv) e armazenados em uma pasta única
 # Ao todo, são 32 arquivos com cerca de 145gb. 
+# SessionInfo::
+# R version 4.1.2 (2021-11-01) - macOS 14.0 Platform: aarch64-apple-darwin20 (64-bit)
 
 # Unificação dos bancos de 1991-2021####
 # Bancos de 1991-2012
