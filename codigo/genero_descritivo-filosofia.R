@@ -84,8 +84,8 @@ ggsave(
 piores_ies <- dadosfi |> 
   group_by(nm_entidade_ensino) |> 
   summarize(total = n()) |> 
-  mutate(frequencia = round(total/sum(total)*100,2)) |> 
-  slice_max(total, n = 15) # Selecionar apenas as 15 piores 
+  mutate(frequencia = round(total/sum(total)*100,2)) #|> 
+ # slice_max(total, n = 15) # Selecionar apenas as 15 piores 
 
 # Lista das IFES e filtragem
 lista_ies <- levels(piores_ies$nm_entidade_ensino)
@@ -131,67 +131,70 @@ tab4 <- tab_piores_ies |>
     columns = c(total, frequencia), # Total
     pattern = "{1} ({2})") |> 
   cols_merge(
-    columns = c(total_d_Male, frequencia_d_Male), # Discentes Homens
+    columns = c(total_g_discente_Male, frequencia_g_discente_Male), # Discentes Homens
     pattern = "{1} ({2})") |> 
   cols_merge(
-    columns = c(total_d_Female, frequencia_d_Female), # Discentes Mulheres
+    columns = c(total_g_discente_Female, frequencia_g_discente_Female), # Discentes Mulheres
     pattern = "{1} ({2})") |> 
   cols_merge(
-    columns = c(total_o_Male, frequencia_o_Male), # Orientadores Homens
+    columns = c(total_g_orientador_Male, frequencia_g_orientador_Male), # Orientadores Homens
     pattern = "{1} ({2})") |> 
   cols_merge(
-    columns = c(total_o_Female, frequencia_o_Female), # Orientadoras Mulheres
+    columns = c(total_g_orientador_Female, frequencia_g_orientador_Female), # Orientadoras Mulheres
     pattern = "{1} ({2})") |> 
   cols_merge(
-    columns = c(total_od_FF, frequencia_od_FF), # Mulher-Mulher
+    columns = c(total_g_oridis_FF, frequencia_g_oridis_FF), # Mulher-Mulher
     pattern = "{1} ({2})") |>
   cols_merge(
-    columns = c(total_od_FM, frequencia_od_FM), # Mulher-Homem
+    columns = c(total_g_oridis_FM, frequencia_g_oridis_FM), # Mulher-Homem
     pattern = "{1} ({2})") |>
   cols_merge(
-    columns = c(total_od_MF, frequencia_od_MF), # Homem-Mulher
+    columns = c(total_g_oridis_MF, frequencia_g_oridis_MF), # Homem-Mulher
     pattern = "{1} ({2})") |>
   cols_merge(
-    columns = c(total_od_MM, frequencia_od_MM), # Homem-Homem
+    columns = c(total_g_oridis_MM, frequencia_g_oridis_MM), # Homem-Homem
     pattern = "{1} ({2})") |>
   tab_spanner(
-    label = "Estudante n(%)",
-    columns = c(total_d_Male, total_d_Female)) |> 
+    label = "Discente n(%)",
+    columns = c(total_g_discente_Male, total_g_discente_Female)) |> 
   tab_spanner(   # Títulos
     label = "Orientador(a) n(%)",  
-    columns = c(total_o_Male, total_o_Female)) |>
+    columns = c(total_g_orientador_Male, total_g_orientador_Female)) |>
   tab_spanner(
-    label = "Orientador(a)/Estudante n(%)",
-    columns = c(total_od_FF, total_od_FM, total_od_MF,total_od_MM)) |> 
+    label = "Orientador(a)/Discente n(%)",
+    columns = c(total_g_oridis_FF, total_g_oridis_FM, total_g_oridis_MF,total_g_oridis_MM)) |> 
   cols_label(
     total = "Trabalhos",
-    total_o_Male = "H",
-    total_o_Female = "M",
-    total_d_Female = "M",
-    total_d_Male = "H",
-    total_od_FF = "M/M",
-    total_od_FM = "M/H",
-    total_od_MF = "H/M",
-    total_od_MM = "H/H"
-  ) |>  
+    total_g_orientador_Male = "H",
+    total_g_orientador_Female = "M",
+    total_g_discente_Female = "M",
+    total_g_discente_Male = "H",
+    total_g_oridis_FF = "M/M",
+    total_g_oridis_FM = "M/H",
+    total_g_oridis_MF = "H/M",
+    total_g_oridis_MM = "H/H"
+  ) |> 
   cols_align(
     align = "center") |> 
   fmt_number(
     drop_trailing_zeros = TRUE,
     decimals = 2,
-    sep_mark = ".") |> 
-  opt_table_font(
-    font = "Times New Roman") |> 
+    sep_mark = ".",
+    dec_mark = ",") |> 
   sub_missing(
     columns = everything(),
     rows = everything(),
-    missing_text = "0"
-  )
+    missing_text = ""
+  ) |> 
+  tab_header(
+    title = "Tabela 1: Descrição do gênero de orientadores e estudantes de teses e dissertações defendidas no Brasil de acordo com as Grandes Áreas da CAPES (1991-2021)",
+    subtitle = NULL
+  ) 
 
 #Salvar
 gtsave(tab4, 
        "tab4_piores-ies.docx", 
-       path = "figs",
+       path = "dados",
        vwidth = 1400,
        vheight = 1700)
 

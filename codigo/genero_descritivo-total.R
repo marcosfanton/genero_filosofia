@@ -359,7 +359,6 @@ ggsave(
   plot = last_plot())
 
 # GRÁFICO 03 | Orientadora vs Estudante#### 
-
 # Cálculo por orientador
 graf3_go <- graphfun(dados, 
                      nm_grande_area_conhecimento, 
@@ -417,6 +416,11 @@ ggsave(
   height = 10,
   dpi = 1200,
   plot = last_plot())
+
+# Tabela Evolução Mulheres####
+tab_graf1 <- graf1 |> filter(g_orientador == "Female")
+tab_graf2 <- graf2 |> filter(g_discente == "Female")
+
 
 # Tabela 3 | 10 piores áreas - Estudantes#### 
 
